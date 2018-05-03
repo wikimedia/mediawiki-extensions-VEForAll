@@ -1,0 +1,71 @@
+{
+	"name": "VEForAll",
+	"version": "0.1",
+	"author": [
+		"Pierre Boutet", "Clément Flip", "Ike Hecht", "Yaron Koren"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:VEForAll",
+	"descriptionmsg": "veforall-desc",
+	"license-name": "GPL v2",
+	"type": "other",
+	"AutoloadClasses": {
+		"VEForAll\\Api\\ApiParsoidUtils": "includes/ApiParsoidUtils.php",
+		"VEForAll\\Container": "includes/Container.php",
+		"VEForAll\\Conversion\\Utils": "includes/Utils.php",
+		"VEForAll\\Exception\\NoParserException": "includes/ExceptionHandling.php",
+		"VEForAll\\Exception\\WikitextException": "includes/ExceptionHandling.php"
+	},
+	"MessagesDirs": {
+		"VEForAll": [
+			"i18n"
+		]
+	},
+	"APIModules": {
+		"veforall-parsoid-utils": "VEForAll\\Api\\ApiParsoidUtils"
+	},
+	"ResourceModules": {
+		"ext.veforall.main": {
+			"scripts": [
+				"resources/VEForAll.js"
+			],
+			"styles": [
+				"resources/VEForAll.css"
+			],
+                        "messages": [
+				"visualeditor-welcomedialog-switch-ve",
+                                "veforall-switch-editor-tool-title"
+                        ],
+			"dependencies": [
+				"ext.veforall.core"
+			]
+		},
+		"ext.veforall.core": {
+			"scripts": [
+				"resources/ve/ve.init.sa.Target.js",
+				"resources/ui/ui.CommandRegistry.js",
+				"resources/ui/ui.SwitchEditorAction.js",
+				"resources/ui/ui.SwitchEditorTool.js",
+				"resources/ext.veforall.target.js",
+				"resources/ext.veforall.targetwide.js",
+				"resources/ext.veforall.editor.js"
+			],
+			"dependencies": [
+				"ext.visualEditor.core",
+				"ext.visualEditor.core.desktop",
+				"ext.visualEditor.data",
+				"ext.visualEditor.icons",
+				"ext.visualEditor.mediawiki",
+				"ext.visualEditor.desktopTarget",
+				"ext.visualEditor.mwimage",
+				"ext.visualEditor.mwlink",
+				"ext.visualEditor.mwtransclusion",
+				"oojs-ui.styles.icons-editing-advanced"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "VEForAll"
+	},
+	"manifest_version": 1
+}

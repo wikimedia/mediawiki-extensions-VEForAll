@@ -1,0 +1,13 @@
+VEForAll extension
+
+Version 0.1
+Pierre Boutet, Clément Flip, Ike Hecht, Yaron Koren
+
+VEForAll ("VisualEditor For All") is a MediaWiki extension that provides
+the ability for other extensions to make use of VisualEditor within
+textareas. VEForAll does not do anything on its own; rather, it defines a
+JavaScript function, applyVisualEditor(), which can be called on any
+textarea input.
+
+As you might expect, the VisualEditor extension must be installed for VEForAll
+to work.

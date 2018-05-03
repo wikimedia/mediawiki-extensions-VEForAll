@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"veforall-desc": "A library for extensions to add VisualEditor",
+	"veforall-i18n-welcome": "Welcome to the localization file of the VEForAll extension.",
+	"veforall-switch-editor-tool-title": "Switch to wikitext editor"
+}

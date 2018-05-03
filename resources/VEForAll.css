@@ -1,0 +1,50 @@
+.ve-area-wrapper .ve-init-target {
+	border: 0px;
+}
+
+.ve-area-wrapper {
+	display: block;
+	border: 1px solid #ccc;
+	background: white;
+}
+
+.ve-area-wrapper textarea {
+	border: 0px;
+}
+
+.ve-area-wrapper .oo-ui-toolbar-bar {
+	border-bottom: 0px;
+	border-top: 1px solid #ccc;
+	background: #f9f9f9;
+	font-size: 0.9em;
+}
+
+.ve-ce-branchNode:focus {
+	border-color: #52bad5;
+	box-shadow: 0 0 7px rgba(39,128,248,.15);
+}
+
+.ve-area-wrapper .ve-ce-documentNode {
+	padding: 0.6em 0.8em;
+	min-height: 130px;
+}
+
+.ve-area-wrapper .oo-ui-toolbar-bar .oo-ui-toolbar-actions .oo-ui-toolbar-bar {
+	border-top:0px;
+}
+
+.ve-area-wrapper .oo-ui-toolGroup {
+	border-right:0px;
+}
+
+.ve-area-wrapper .oo-ui-toolbar-bar .oo-ui-tool-name-ve4aSwitchEditor .oo-ui-tool-link{
+	padding:9px;
+}
+
+.ve-area-wrapper .oo-ui-toolbar {
+	z-index: 0;
+}
+
+.ve-area-wrapper .oo-ui-popupWidget-body.oo-ui-clippableElement-clippable {
+	min-height: 9em;
+}

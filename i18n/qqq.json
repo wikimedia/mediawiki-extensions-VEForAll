@@ -1,4 +1,20 @@
 {
-	"@metadata": [],
-	"veforall-desc": "{{desc|name=VEForAll|url=https://www.mediawiki.org/wiki/Extension:VEForAll }}"
+	"@metadata": {
+		"authors": [
+			"Shirayuki",
+			"Umherirrender",
+			"Amire80",
+			"Fhocutt",
+			"Liuxinyu970226"
+		]
+	},
+	"veforall-desc": "{{desc|name=VEForAll|url=http://www.wikiworks.com }}",
+	"veforall-switch-editor-tool-title": "Label for a button",
+	"apihelp-veforall-parsoid-utils-summary": "{{doc-apihelp-summary|parsoid-utils}}",
+	"apihelp-veforall-parsoid-utils-param-from": "{{doc-apihelp-param|parsoid-utils|from}}",
+	"apihelp-veforall-parsoid-utils-param-to": "{{doc-apihelp-param|parsoid-utils|to}}",
+	"apihelp-veforall-parsoid-utils-param-content": "{{doc-apihelp-param|parsoid-utils|content}}",
+	"apihelp-veforall-parsoid-utils-param-title": "{{doc-apihelp-param|parsoid-utils|title}}",
+	"apihelp-veforall-parsoid-utils-param-pageid": "{{doc-apihelp-param|parsoid-utils|pageid}}",
+	"apihelp-veforall-parsoid-utils-example-1": "{{doc-apihelp-example|parsoid-utils}}"
 }

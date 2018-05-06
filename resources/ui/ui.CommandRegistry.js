@@ -9,7 +9,7 @@ mw.veForAll.ui = mw.veForAll.ui || {};
 					've4aSwitchEditor',
 					've4aSwitchEditor',
 					'switch', // method to call on action
-					{args: []} // arguments to pass to action
+					{ args: [] } // arguments to pass to action
 			)
 			);
 }( ve ) );

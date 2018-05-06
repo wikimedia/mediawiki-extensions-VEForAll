@@ -12,7 +12,8 @@ class ApiParsoidUtils extends ApiBase {
 		$params = $this->extractRequestParams();
 		$page = $this->getTitleOrPageId( $params );
 		try {
-			$content = Utils::convert( $params['from'], $params['to'], $params['content'], $page->getTitle() );
+			$content = Utils::convert( $params['from'], $params['to'],
+				$params['content'], $page->getTitle() );
 		} catch ( WikitextException $e ) {
 			$code = $e->getErrorCode();
 			$this->dieWithError( $code, $code, [ 'detail' => $e->getMessage() ], $e->getStatusCode()
@@ -52,7 +53,7 @@ class ApiParsoidUtils extends ApiBase {
 	 */
 	protected function getExamplesMessages() {
 		return [
-			"action=veforall-parsoid-utils&from=wikitext&to=html&content='''lorem'''+''blah''&title=Main_Page"
+			"action=veforall-parsoid-utils&from=wikitext&to=html&content=''blah''&title=Main_Page"
 			=> 'apihelp-veforall-parsoid-utils-example-1',
 		];
 	}

@@ -35,7 +35,7 @@
 	 * @static
 	 * @property
 	 */
-	mw.veForAll.ui.SwitchEditorAction.static.methods = ['switch'];
+	mw.veForAll.ui.SwitchEditorAction.static.methods = [ 'switch' ];
 
 	/* Methods */
 

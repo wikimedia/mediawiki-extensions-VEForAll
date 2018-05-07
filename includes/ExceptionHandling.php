@@ -3,8 +3,6 @@
 namespace VEForAll\Exception;
 
 use MWException;
-use OutputPage;
-use RequestContext;
 
 /**
  * Category: Parsoid

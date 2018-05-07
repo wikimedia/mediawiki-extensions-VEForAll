@@ -31,10 +31,10 @@
 			"styles": [
 				"resources/VEForAll.css"
 			],
-                        "messages": [
+			"messages": [
 				"visualeditor-welcomedialog-switch-ve",
-                                "veforall-switch-editor-tool-title"
-                        ],
+				"veforall-switch-editor-tool-title"
+			],
 			"dependencies": [
 				"ext.veforall.core"
 			]

@@ -9,7 +9,6 @@ use VEForAll\Exception\WikitextException;
 use Language;
 use Linker;
 use MultiHttpClient;
-use OutputPage;
 use RequestContext;
 use Sanitizer;
 use Title;

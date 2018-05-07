@@ -48,4 +48,3 @@ class Container extends \Pimple\Container {
 		return $container[$name];
 	}
 }
-

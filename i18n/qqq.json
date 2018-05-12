@@ -1,13 +1,6 @@
 {
 	"@metadata": {
-		"authors": [
-			"Shirayuki",
-			"Umherirrender",
-			"Amire80",
-			"Fhocutt",
-			"Liuxinyu970226"
-		]
+		"authors": []
 	},
-	"veforall-desc": "{{desc|name=VEForAll|url=http://www.wikiworks.com }}",
-	"veforall-i18n-welcome": "Used to greet the user when reading the i18n/??.json file."
+	"veforall-desc": "{{desc|name=VEForAll|url=https://www.mediawiki.org/wiki/Extension:VEForAll }}"
 }

@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Liuxinyu970226"
+		]
+	},
+	"veforall-desc": "用于将扩展添加到可视化编辑器的库",
+	"veforall-switch-editor-tool-title": "切换为wiki文本编辑器"
+}

@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ykhwong"
+		]
+	},
+	"veforall-desc": "시각편집기를 추가하는 확장 기능을 위한 라이브러리",
+	"veforall-switch-editor-tool-title": "위키텍스트 편집기로 전환"
+}

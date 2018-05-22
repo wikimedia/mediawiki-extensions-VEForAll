@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gomoko"
+		]
+	},
+	"veforall-desc": "Une bibliothèque pour que les extensions ajoutent VisualEditor",
+	"veforall-switch-editor-tool-title": "Basculer vers l’éditeur wikitexte"
+}

@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"veforall-desc": "用於添加視覺化編輯器擴充功能的函示庫",
+	"veforall-switch-editor-tool-title": "切換至 wiki 文字編輯器"
+}

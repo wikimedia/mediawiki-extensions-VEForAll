@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eduardo Addad de Oliveira"
+		]
+	},
+	"veforall-desc": "Uma biblioteca para extensões para adicionar o VisualEditor",
+	"veforall-switch-editor-tool-title": "Alternar para o editor de texto wiki"
+}

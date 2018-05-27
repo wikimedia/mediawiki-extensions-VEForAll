@@ -20,21 +20,21 @@
 
 	mw.veForAll.Targetwide.static.toolbarGroups = [
 		// History
-		//{ include: [ 'undo', 'redo' ] },
+		// { include: [ 'undo', 'redo' ] },
 		// Format
 		{
 			header: OO.ui.deferMsg( 'visualeditor-toolbar-paragraph-format' ),
 			title: OO.ui.deferMsg( 'visualeditor-toolbar-format-tooltip' ),
 			type: 'menu',
-			include: [{group: 'format'}],
-			promote: ['paragraph'],
-			demote: ['preformatted', 'blockquote']
+			include: [ { group: 'format' } ],
+			promote: [ 'paragraph' ],
+			demote: [ 'preformatted', 'blockquote' ]
 		},
 		// Text style
 		{
 			header: OO.ui.deferMsg( 'visualeditor-toolbar-text-style' ),
 			title: OO.ui.deferMsg( 'visualeditor-toolbar-style-tooltip' ),
-			include: ['bold', 'italic', 'moreTextStyle']
+			include: [ 'bold', 'italic', 'moreTextStyle' ]
 		},
 		// Link
 		{ include: [ 'link' ] },
@@ -44,8 +44,8 @@
 			title: OO.ui.deferMsg( 'visualeditor-toolbar-structure' ),
 			type: 'list',
 			icon: 'listBullet',
-			include: [{group: 'structure'}],
-			demote: ['outdent', 'indent']
+			include: [ { group: 'structure' } ],
+			demote: [ 'outdent', 'indent' ]
 		},
 		// Insert
 		{
@@ -54,10 +54,10 @@
 			type: 'list',
 			icon: 'add',
 			label: '',
-			include: ['media', 'insertTable', 'specialCharacter', 'warningblock', 'preformatted', 'infoblock', 'ideablock', 'dontblock', 'pinblock']
-		},
-				// Special character toolbar
-				//{ include: [ 'specialCharacter' ] }
+			include: [ 'media', 'insertTable', 'specialCharacter', 'warningblock', 'preformatted', 'infoblock', 'ideablock', 'dontblock', 'pinblock' ]
+		}
+		// Special character toolbar
+		// { include: [ 'specialCharacter' ] }
 	];
 
 	ve.init.mw.targetFactory.register( mw.veForAll.Targetwide );

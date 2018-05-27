@@ -33,7 +33,7 @@ ve.init.sa = ve.init.sa || {};
 
 ve.init.sa.Target = function ( config ) {
 	config = config || {};
-	config.toolbarConfig = $.extend( {shadow: true, actions: true, floatable: true}, config.toolbarConfig );
+	config.toolbarConfig = $.extend( { shadow: true, actions: true, floatable: true }, config.toolbarConfig );
 
 	// Parent constructor
 	ve.init.sa.Target.super.call( this, config );
@@ -55,7 +55,7 @@ ve.init.sa.Target.static.actionGroups = [
 		icon: 'menu',
 		indicator: null,
 		title: OO.ui.deferMsg( 'visualeditor-pagemenu-tooltip' ),
-		include: ['findAndReplace', 'changeDirectionality', 'commandHelp']
+		include: [ 'findAndReplace', 'changeDirectionality', 'commandHelp' ]
 	}
 ];
 

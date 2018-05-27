@@ -3,5 +3,12 @@
 		"authors": []
 	},
 	"veforall-desc": "A library for extensions to add VisualEditor",
-	"veforall-switch-editor-tool-title": "Switch to wikitext editor"
+	"veforall-switch-editor-tool-title": "Switch to wikitext editor",
+	"apihelp-veforall-parsoid-utils-summary": "Convert text back and forth from Wikitext to HTML",
+	"apihelp-veforall-parsoid-utils-param-from": "'html' or 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-to": "'html' or 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-content": "content to be converted",
+	"apihelp-veforall-parsoid-utils-param-title": "title of the page holding the content",
+	"apihelp-veforall-parsoid-utils-param-pageid": "page ID of the page holding the content",
+	"apihelp-veforall-parsoid-utils-example-1": "convert ''blah'' from wikitext to html"
 }

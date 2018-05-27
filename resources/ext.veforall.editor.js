@@ -19,7 +19,6 @@
 	 *
 	 */
 
-
 	/**
 	 * @class
 	 * @constructor
@@ -39,13 +38,13 @@
 		// Once this is an OO.ui.TextInputWidget we'll be able to use real PendingElement
 		// functionality for this
 		this.$node
-				.prop( 'disabled', true )
-				.addClass( 'oo-ui-texture-pending' );
+			.prop( 'disabled', true )
+			.addClass( 'oo-ui-texture-pending' );
 
 		// The main module should already be loaded.
-		modules = ['ext.math.editbutton.enabler'].concat(
+		modules = [ 'ext.math.editbutton.enabler' ].concat(
 				mw.config.get( 'wgVisualEditorConfig' ).pluginModules.filter( mw.loader.getState )
-				);
+			);
 
 		// load dependencies & init editor
 		mw.loader.using( modules, $.proxy( this.init, this, content || '' ) );
@@ -53,21 +52,19 @@
 
 	OO.mixinClass( mw.veForAll.Editor, OO.EventEmitter );
 
-
 	/**
 	 * List of callbacks to execute when VE is fully loaded
 	 */
 	mw.veForAll.Editor.prototype.initCallbacks = [];
 
 	mw.veForAll.Editor.prototype.createTarget = function () {
-
 		if ( $( this.$node ).hasClass( 'toolbarOnTop' ) ) {
 			this.target = new mw.veForAll.Targetwide( this.$node, $( this.$node ).val() );
 		} else {
 			this.target = new mw.veForAll.Target( this.$node, $( this.$node ).val() );
 		}
 		return this.target;
-	}
+	};
 
 	/**
 	 * Callback function, executed after all VE dependencies have been loaded.
@@ -76,21 +73,18 @@
 	 */
 	mw.veForAll.Editor.prototype.init = function ( content ) {
 		var $veNode, htmlDoc, surface, $documentNode,
-				$focusedElement = $( ':focus' );
+			$focusedElement = $( ':focus' );
 
 		// ve.createDocumentFromHtml documents support for an empty string
 		// to create an empty document, but does not mention other falsy values.
 		content = content || '';
 
-
-		//this.target = ve.init.mw.targetFactory.create( 'pageForms' );
+		// this.target = ve.init.mw.targetFactory.create( 'pageForms' );
 		this.target = this.createTarget();
-
 
 		$.each( this.initCallbacks, $.proxy( function ( k, callback ) {
 			callback.apply( this );
 		}, this ) );
-
 	};
 
 	mw.veForAll.Editor.prototype.destroy = function () {
@@ -190,7 +184,7 @@
 				!isMobileTarget &&
 				mw.loader.getState( 'ext.visualEditor.core' ) &&
 				mw.config.get( 'wgFlowEditorList' ).indexOf( 'visualeditor' ) !== -1 &&
-				window.VisualEditorSupportCheck && VisualEditorSupportCheck()
+				window.VisualEditorSupportCheck && VisualEditorSupportCheck
 				);
 	};
 

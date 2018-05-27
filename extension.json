@@ -6,8 +6,14 @@
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:VEForAll",
 	"descriptionmsg": "veforall-desc",
-	"license-name": "GPL v2",
+	"license-name": "GPL-2.0-or-later",
 	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.25.0",
+		"extensions": {
+			"VisualEditor": "*"
+		}
+	},
 	"AutoloadClasses": {
 		"VEForAll\\Api\\ApiParsoidUtils": "includes/ApiParsoidUtils.php",
 		"VEForAll\\Container": "includes/Container.php",

@@ -11,3 +11,8 @@ textarea input.
 
 As you might expect, the VisualEditor extension must be installed for VEForAll
 to work.
+
+This extension includes several files (ApiParsoidUtils.php, Container.php,
+ExceptionHandling.php, Utils.php) that were mostly copied from the
+corresponding files in the StructuredDiscussions extension, formerly known
+as Flow. See that extension for attribution.

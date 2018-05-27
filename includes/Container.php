@@ -2,6 +2,9 @@
 
 namespace VEForAll;
 
+/**
+ * Heavily based on the Container class from the StructuredDiscussions extension.
+ */
 class Container extends \Pimple\Container {
 	static private $container;
 

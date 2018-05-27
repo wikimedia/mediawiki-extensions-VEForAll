@@ -6,6 +6,9 @@ use ApiBase;
 use VEForAll\Conversion\Utils;
 use VEForAll\Exception\WikitextException;
 
+/**
+ * Heavily based on the ApiParsoidUtils class from the StructuredDiscussions extension.
+ */
 class ApiParsoidUtils extends ApiBase {
 
 	public function execute() {

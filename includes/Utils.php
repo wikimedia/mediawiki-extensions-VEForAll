@@ -16,7 +16,7 @@ use User;
 use VirtualRESTServiceClient;
 
 /**
- * Heavily based on the Utils class from the Flow extension.
+ * Heavily based on the Utils class from the StructuredDiscussions extension.
  */
 abstract class Utils {
 	/**

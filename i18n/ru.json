@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Redredsonia"
+		]
+	},
+	"veforall-switch-editor-tool-title": "Переключить на редактор вики-текста",
+	"apihelp-veforall-parsoid-utils-param-from": "'html' или 'вики-текст'",
+	"apihelp-veforall-parsoid-utils-param-to": "'html' или 'вики-текст'",
+	"apihelp-veforall-parsoid-utils-param-content": "содержимое для преобразования",
+	"apihelp-veforall-parsoid-utils-param-title": "название страницы, содержащей контент",
+	"apihelp-veforall-parsoid-utils-example-1": "преобразовать ''blah'' из вики-текста в html"
+}

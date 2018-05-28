@@ -4,5 +4,6 @@
 			"WikiPhoenix"
 		]
 	},
+	"veforall-desc": "Ett bibliotek för tillägg att lägga till i VisualEditor",
 	"veforall-switch-editor-tool-title": "Byt till wikitext-redigeraren"
 }

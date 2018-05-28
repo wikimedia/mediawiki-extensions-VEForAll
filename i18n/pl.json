@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chrumps",
+			"Railfail536"
+		]
+	},
+	"veforall-switch-editor-tool-title": "Przełącz do edytora wikitekstu",
+	"apihelp-veforall-parsoid-utils-param-from": "'html' lub 'wikitekst'",
+	"apihelp-veforall-parsoid-utils-param-to": "'html' lub 'wikitekst'",
+	"apihelp-veforall-parsoid-utils-param-content": "treść do skonwertowania",
+	"apihelp-veforall-parsoid-utils-param-title": "tytuł strony zawierającej treść"
+}

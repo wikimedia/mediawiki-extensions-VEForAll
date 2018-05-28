@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Athena in Wonderland"
+			"Athena in Wonderland",
+			"Hamilton Abreu"
 		]
 	},
+	"veforall-desc": "Uma biblioteca para as extensões adicionarem o VisualEditor",
 	"veforall-switch-editor-tool-title": "Alternar para o editor da notação wiki"
 }

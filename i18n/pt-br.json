@@ -1,9 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eduardo Addad de Oliveira"
+			"Eduardo Addad de Oliveira",
+			"Allysson"
 		]
 	},
 	"veforall-desc": "Uma biblioteca para extensões para adicionar o VisualEditor",
-	"veforall-switch-editor-tool-title": "Alternar para o editor de texto wiki"
+	"veforall-switch-editor-tool-title": "Alternar para o editor de texto wiki",
+	"apihelp-veforall-parsoid-utils-param-from": "'html' ou 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-to": "'html' ou 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-content": "conteúdo a ser convertido",
+	"apihelp-veforall-parsoid-utils-param-title": "título da página que mantém o conteúdo",
+	"apihelp-veforall-parsoid-utils-example-1": "converta \"blah\" de wikitext para html"
 }

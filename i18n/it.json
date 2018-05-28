@@ -4,5 +4,9 @@
 			"Beta16"
 		]
 	},
-	"veforall-switch-editor-tool-title": "Passa all'editor wikitesto"
+	"veforall-switch-editor-tool-title": "Passa all'editor wikitesto",
+	"apihelp-veforall-parsoid-utils-param-from": "'html' o 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-to": "'html' o 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-content": "contenuto da convertire",
+	"apihelp-veforall-parsoid-utils-example-1": "converti ''blah'' da wikitesto a html"
 }

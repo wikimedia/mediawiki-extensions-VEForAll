@@ -16,3 +16,6 @@ This extension includes several files (ApiParsoidUtils.php, Container.php,
 ExceptionHandling.php, Utils.php) that were mostly copied from the
 corresponding files in the StructuredDiscussions extension, formerly known
 as Flow. See that extension for attribution.
+
+For more information, see the extension homepage at:
+https://www.mediawiki.org/wiki/Extension:VEForAll

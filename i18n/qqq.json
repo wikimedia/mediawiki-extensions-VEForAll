@@ -8,7 +8,7 @@
 			"Liuxinyu970226"
 		]
 	},
-	"veforall-desc": "{{desc|name=VEForAll|url=http://www.wikiworks.com }}",
+	"veforall-desc": "{{desc|name=VEForAll|url=https://www.mediawiki.org/wiki/Extension:VEForAll}}",
 	"veforall-switch-editor-tool-title": "Label for a button",
 	"apihelp-veforall-parsoid-utils-summary": "{{doc-apihelp-summary|parsoid-utils}}",
 	"apihelp-veforall-parsoid-utils-param-from": "{{doc-apihelp-param|parsoid-utils|from}}",

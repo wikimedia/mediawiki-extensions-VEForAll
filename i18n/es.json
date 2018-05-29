@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Adjen"
+			"Adjen",
+			"Fitoschido"
 		]
 	},
 	"veforall-desc": "Una biblioteca de extensiones para añadir VisualEditor",
@@ -9,8 +10,8 @@
 	"apihelp-veforall-parsoid-utils-summary": "Convierte el texto posteriormente deatras y regresalo entre Wikitext y HTML",
 	"apihelp-veforall-parsoid-utils-param-from": "'html' O 'wikitext'",
 	"apihelp-veforall-parsoid-utils-param-to": "'html' O 'wikitext'",
-	"apihelp-veforall-parsoid-utils-param-content": "Contenido para ser convertido",
+	"apihelp-veforall-parsoid-utils-param-content": "contenido que se convertirá",
 	"apihelp-veforall-parsoid-utils-param-title": "El título de la página que mantiene el contenido",
-	"apihelp-veforall-parsoid-utils-param-pageid": "Identificaion de la página que mantiene el contenido",
+	"apihelp-veforall-parsoid-utils-param-pageid": "identificador de la página que alberga el contenido",
 	"apihelp-veforall-parsoid-utils-example-1": "Convierte ''blah'' de wikitext a html"
 }

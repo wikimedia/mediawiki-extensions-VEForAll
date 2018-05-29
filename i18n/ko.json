@@ -5,5 +5,12 @@
 		]
 	},
 	"veforall-desc": "시각편집기를 추가하는 확장 기능을 위한 라이브러리",
-	"veforall-switch-editor-tool-title": "위키텍스트 편집기로 전환"
+	"veforall-switch-editor-tool-title": "위키텍스트 편집기로 전환",
+	"apihelp-veforall-parsoid-utils-summary": "텍스트를 위키텍스트에서 HTML로, 또는 그 반대로 변환",
+	"apihelp-veforall-parsoid-utils-param-from": "'html' 또는 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-to": "'html' 또는 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-content": "변환할 내용",
+	"apihelp-veforall-parsoid-utils-param-title": "내용을 보유하고 있는 문서의 제목",
+	"apihelp-veforall-parsoid-utils-param-pageid": "내용을 보유하고 있는 문서의 문서 ID",
+	"apihelp-veforall-parsoid-utils-example-1": "\"blah\"를 위키텍스트에서 html로 변환"
 }

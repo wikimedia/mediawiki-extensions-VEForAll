@@ -6,5 +6,6 @@
 	},
 	"veforall-switch-editor-tool-title": "Op de Wikitext-Editeur wiesselen",
 	"apihelp-veforall-parsoid-utils-param-from": "'html' oder 'wikitext'",
-	"apihelp-veforall-parsoid-utils-param-to": "'html' oder 'wikitext'"
+	"apihelp-veforall-parsoid-utils-param-to": "'html' oder 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-content": "Inhalt fir ëmzewandelen"
 }

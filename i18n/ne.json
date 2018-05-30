@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nirajan pant"
+		]
+	},
+	"veforall-switch-editor-tool-title": "विकिपाठ सम्पादकमा जानुहोस्",
+	"apihelp-veforall-parsoid-utils-param-from": "'html' वा 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-to": "'html' वा 'wikitext'"
+}

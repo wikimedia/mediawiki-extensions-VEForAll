@@ -5,5 +5,7 @@
 		]
 	},
 	"veforall-desc": "Μια βιβλιοθήκη για επεκτάσεις για την προσθήκη του VisualEditor",
-	"veforall-switch-editor-tool-title": "Αλλαγή στον επεξεργαστή βικικειμένου"
+	"veforall-switch-editor-tool-title": "Αλλαγή στον επεξεργαστή βικικειμένου",
+	"apihelp-veforall-parsoid-utils-param-from": "'html' ή 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-to": "'html' ή 'wikitext'"
 }

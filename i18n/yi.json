@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Har-wradim"
+		]
+	},
+	"apihelp-veforall-parsoid-utils-param-from": "'html' אָדער 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-to": "'html' אָדער 'wikitext'",
+	"apihelp-veforall-parsoid-utils-example-1": "קאָנווערטירן ''blah'' פון וויקיטעקסט צו html"
+}

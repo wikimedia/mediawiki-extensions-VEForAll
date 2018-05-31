@@ -5,5 +5,9 @@
 		]
 	},
 	"veforall-desc": "用于将扩展添加到可视化编辑器的库",
-	"veforall-switch-editor-tool-title": "切换为wiki文本编辑器"
+	"veforall-switch-editor-tool-title": "切换为wiki文本编辑器",
+	"apihelp-veforall-parsoid-utils-summary": "反复将文本从Wiki文本转换为HTML",
+	"apihelp-veforall-parsoid-utils-param-from": "“html”或“wikitext”",
+	"apihelp-veforall-parsoid-utils-param-to": "“html”或“wikitext”",
+	"apihelp-veforall-parsoid-utils-param-content": "要转换的内容"
 }

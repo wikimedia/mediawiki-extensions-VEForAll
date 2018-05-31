@@ -5,5 +5,10 @@
 		]
 	},
 	"veforall-desc": "Ett bibliotek för tillägg att lägga till i VisualEditor",
-	"veforall-switch-editor-tool-title": "Byt till wikitext-redigeraren"
+	"veforall-switch-editor-tool-title": "Byt till wikitext-redigeraren",
+	"apihelp-veforall-parsoid-utils-summary": "Konvertera text fram och tillbaka mellan Wikitext och HTML",
+	"apihelp-veforall-parsoid-utils-param-from": "\"html\" eller \"wikitext\"",
+	"apihelp-veforall-parsoid-utils-param-to": "\"html\" eller \"wikitext\"",
+	"apihelp-veforall-parsoid-utils-param-content": "innehåll att konvertera",
+	"apihelp-veforall-parsoid-utils-example-1": "konvertera ''blah'' från wikitext till html"
 }

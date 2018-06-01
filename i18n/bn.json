@@ -4,5 +4,7 @@
 			"Aftabuzzaman"
 		]
 	},
-	"veforall-switch-editor-tool-title": "উইকিপাঠ্য সম্পাদকে যান"
+	"veforall-switch-editor-tool-title": "উইকিপাঠ্য সম্পাদকে যান",
+	"apihelp-veforall-parsoid-utils-param-from": "'html' বা 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-to": "'html' বা 'wikitext'"
 }

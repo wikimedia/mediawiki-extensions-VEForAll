@@ -6,5 +6,6 @@
 	},
 	"veforall-desc": "Бібліятэка для пашырэньняў, каб дадаваць візуальны рэдактар",
 	"veforall-switch-editor-tool-title": "Пераключыцца на вікітэкставы рэдактар",
-	"apihelp-veforall-parsoid-utils-summary": "Канвэртуе тэкст зь вікітэксту ў HTML і наадварот"
+	"apihelp-veforall-parsoid-utils-summary": "Канвэртуе тэкст зь вікітэксту ў HTML і наадварот",
+	"apihelp-veforall-parsoid-utils-param-from": "«html» ці «wikitext»"
 }

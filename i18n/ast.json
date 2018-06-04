@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"veforall-desc": "Una biblioteca d'estensiones p'añadir VisualEditor",
+	"veforall-switch-editor-tool-title": "Cambiar al editor de testu wiki",
+	"apihelp-veforall-parsoid-utils-summary": "Convierte'l testu alantre y atrás ente testu Wiki y HTML",
+	"apihelp-veforall-parsoid-utils-param-from": "'html' o 'testu wiki'",
+	"apihelp-veforall-parsoid-utils-param-to": "'html' o 'testu wiki'",
+	"apihelp-veforall-parsoid-utils-param-content": "conteníu a convertir.",
+	"apihelp-veforall-parsoid-utils-param-title": "títulu de la páxina que tien el conteníu",
+	"apihelp-veforall-parsoid-utils-param-pageid": "identificador de la páxina que tien el conteníu",
+	"apihelp-veforall-parsoid-utils-example-1": "convierte ''blah'' de testu wiki a html"
+}

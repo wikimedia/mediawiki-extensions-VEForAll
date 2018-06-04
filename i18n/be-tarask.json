@@ -8,5 +8,6 @@
 	"veforall-switch-editor-tool-title": "Пераключыцца на вікітэкставы рэдактар",
 	"apihelp-veforall-parsoid-utils-summary": "Канвэртуе тэкст зь вікітэксту ў HTML і наадварот",
 	"apihelp-veforall-parsoid-utils-param-from": "«html» ці «wikitext»",
-	"apihelp-veforall-parsoid-utils-param-to": "«html» ці «wikitext»"
+	"apihelp-veforall-parsoid-utils-param-to": "«html» ці «wikitext»",
+	"apihelp-veforall-parsoid-utils-param-content": "зьмест для ператварэньня"
 }

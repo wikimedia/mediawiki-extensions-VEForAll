@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"ديفيد"
+		]
+	},
+	"veforall-desc": "مكتبة للتمديدات لإضافة محرر مرئي",
+	"veforall-switch-editor-tool-title": "التبديل إلى محرر نص الويكي",
+	"apihelp-veforall-parsoid-utils-summary": "تحويل النص ذهابا وإيابا من نص الويكي إلى HTML",
+	"apihelp-veforall-parsoid-utils-param-from": "\"html\" أو \"نص الويكي\"",
+	"apihelp-veforall-parsoid-utils-param-to": "\"html\" أو \"نص الويكي\"",
+	"apihelp-veforall-parsoid-utils-param-content": "محتوى ليتم تحويله.",
+	"apihelp-veforall-parsoid-utils-param-title": "عنوان الصفحة التي تحمل المحتوى",
+	"apihelp-veforall-parsoid-utils-param-pageid": "معرف الصفحة للصفحة التي تحتفظ بالمحتوى",
+	"apihelp-veforall-parsoid-utils-example-1": "تحويل ''blah'' من نص الويكي إلى html"
+}

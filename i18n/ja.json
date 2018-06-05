@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Omotecho"
+		]
+	},
+	"veforall-desc": "VisualEditorを追加する拡張機能用ライブラリ",
+	"veforall-switch-editor-tool-title": "ウィキテキストエディタに切り替える",
+	"apihelp-veforall-parsoid-utils-summary": "文の書式をウィキテキストとHTMLに可逆的に変換する",
+	"apihelp-veforall-parsoid-utils-param-from": "'html' か 'wikitext' か",
+	"apihelp-veforall-parsoid-utils-param-to": "'html' か 'wikitext' か",
+	"apihelp-veforall-parsoid-utils-param-content": "変換対象のコンテンツ"
+}

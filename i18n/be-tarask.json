@@ -10,5 +10,6 @@
 	"apihelp-veforall-parsoid-utils-param-from": "«html» ці «wikitext»",
 	"apihelp-veforall-parsoid-utils-param-to": "«html» ці «wikitext»",
 	"apihelp-veforall-parsoid-utils-param-content": "зьмест для ператварэньня",
-	"apihelp-veforall-parsoid-utils-param-title": "назва старонкі, якая ўтрымлівае зьмест"
+	"apihelp-veforall-parsoid-utils-param-title": "назва старонкі, якая ўтрымлівае зьмест",
+	"apihelp-veforall-parsoid-utils-param-pageid": "ідэнтыфікатар старонкі, якая ўтрымлівае зьмест"
 }

@@ -42,9 +42,7 @@
 			.addClass( 'oo-ui-texture-pending' );
 
 		// The main module should already be loaded.
-		modules = [ 'ext.math.editbutton.enabler' ].concat(
-				mw.config.get( 'wgVisualEditorConfig' ).pluginModules.filter( mw.loader.getState )
-			);
+		modules = mw.config.get( 'wgVisualEditorConfig' ).pluginModules.filter( mw.loader.getState );
 
 		// load dependencies & init editor
 		mw.loader.using( modules, $.proxy( this.init, this, content || '' ) );
@@ -189,3 +187,4 @@
 	};
 
 }( jQuery, mediaWiki, OO, ve ) );
+

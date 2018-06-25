@@ -86,7 +86,12 @@ abstract class Utils {
 			return $plain;
 		} else {
 			$lang = $lang ?: $wgLang;
-			return $lang->truncateForVisual( $plain, $truncateLength );
+			if ( method_exists( $lang, 'truncateForVisual' ) ) {
+				// MW 1.31+
+				return $lang->truncateForVisual( $plain, $truncateLength );
+			} else {
+				return $lang->truncate( $plain, $truncateLength );
+			}
 		}
 	}
 

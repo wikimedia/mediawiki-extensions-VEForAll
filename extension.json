@@ -16,10 +16,9 @@
 	},
 	"AutoloadClasses": {
 		"VEForAll\\Api\\ApiParsoidUtils": "includes/ApiParsoidUtils.php",
-		"VEForAll\\Container": "includes/Container.php",
 		"VEForAll\\Conversion\\Utils": "includes/Utils.php",
-		"VEForAll\\Exception\\NoParserException": "includes/ExceptionHandling.php",
-		"VEForAll\\Exception\\WikitextException": "includes/ExceptionHandling.php"
+		"VEForAll\\Exception\\ParsoidException": "includes/ExceptionHandling.php",
+		"VEForAll\\Exception\\ParameterException": "includes/ExceptionHandling.php"
 	},
 	"MessagesDirs": {
 		"VEForAll": [

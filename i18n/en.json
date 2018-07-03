@@ -10,5 +10,8 @@
 	"apihelp-veforall-parsoid-utils-param-content": "content to be converted",
 	"apihelp-veforall-parsoid-utils-param-title": "title of the page holding the content",
 	"apihelp-veforall-parsoid-utils-param-pageid": "page ID of the page holding the content",
-	"apihelp-veforall-parsoid-utils-example-1": "convert ''blah'' from wikitext to html"
+	"apihelp-veforall-parsoid-utils-example-1": "convert ''blah'' from wikitext to html",
+	"veforall-api-error-unsupported-conversion": "Conversion from '$1' to '$2' is not supported.",
+	"veforall-api-error-unsupported-parser-conversion": "Conversion from '$1' to '$2' is not supported by the core parser.",
+	"veforall-api-error-parsoid-error": "Request to $1 for $2 to $3 conversion of content connected to title $4 failed: $5"
 }

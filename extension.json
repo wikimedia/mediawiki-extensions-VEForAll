@@ -15,10 +15,7 @@
 		}
 	},
 	"AutoloadClasses": {
-		"VEForAll\\Api\\ApiParsoidUtils": "includes/ApiParsoidUtils.php",
-		"VEForAll\\Conversion\\Utils": "includes/Utils.php",
-		"VEForAll\\Exception\\ParsoidException": "includes/ExceptionHandling.php",
-		"VEForAll\\Exception\\ParameterException": "includes/ExceptionHandling.php"
+		"VEForAll\\ApiParsoidUtils": "includes/ApiParsoidUtils.php"
 	},
 	"MessagesDirs": {
 		"VEForAll": [
@@ -26,7 +23,7 @@
 		]
 	},
 	"APIModules": {
-		"veforall-parsoid-utils": "VEForAll\\Api\\ApiParsoidUtils"
+		"veforall-parsoid-utils": "VEForAll\\ApiParsoidUtils"
 	},
 	"ResourceModules": {
 		"ext.veforall.main": {

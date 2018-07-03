@@ -16,5 +16,8 @@
 	"apihelp-veforall-parsoid-utils-param-content": "{{doc-apihelp-param|parsoid-utils|content}}",
 	"apihelp-veforall-parsoid-utils-param-title": "{{doc-apihelp-param|parsoid-utils|title}}",
 	"apihelp-veforall-parsoid-utils-param-pageid": "{{doc-apihelp-param|parsoid-utils|pageid}}",
-	"apihelp-veforall-parsoid-utils-example-1": "{{doc-apihelp-example|parsoid-utils}}"
+	"apihelp-veforall-parsoid-utils-example-1": "{{doc-apihelp-example|parsoid-utils}}",
+	"veforall-api-error-unsupported-conversion": "Error message",
+	"veforall-api-error-unsupported-parser-conversion": "Error message",
+	"veforall-api-error-parsoid-error": "Error message"
 }

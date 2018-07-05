@@ -12,5 +12,7 @@
 	"apihelp-veforall-parsoid-utils-param-content": "변환할 내용",
 	"apihelp-veforall-parsoid-utils-param-title": "내용을 보유하고 있는 문서의 제목",
 	"apihelp-veforall-parsoid-utils-param-pageid": "내용을 보유하고 있는 문서의 문서 ID",
-	"apihelp-veforall-parsoid-utils-example-1": "\"blah\"를 위키텍스트에서 html로 변환"
+	"apihelp-veforall-parsoid-utils-example-1": "\"blah\"를 위키텍스트에서 html로 변환",
+	"veforall-api-error-unsupported-conversion": "'$1'에서 '$2'(으)로 변환하는 것은 지원되지 않습니다.",
+	"veforall-api-error-unsupported-parser-conversion": "'$1'에서 '$2'(으)로 변환하는 것은 코어 파서에 의해 지원되지 않습니다."
 }

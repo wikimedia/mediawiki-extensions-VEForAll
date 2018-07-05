@@ -2,12 +2,16 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
-			"Railfail536"
+			"Railfail536",
+			"DeRudySoulStorm"
 		]
 	},
 	"veforall-switch-editor-tool-title": "Przełącz do edytora wikitekstu",
 	"apihelp-veforall-parsoid-utils-param-from": "'html' lub 'wikitekst'",
 	"apihelp-veforall-parsoid-utils-param-to": "'html' lub 'wikitekst'",
 	"apihelp-veforall-parsoid-utils-param-content": "treść do skonwertowania",
-	"apihelp-veforall-parsoid-utils-param-title": "tytuł strony zawierającej treść"
+	"apihelp-veforall-parsoid-utils-param-title": "tytuł strony zawierającej treść",
+	"veforall-api-error-unsupported-conversion": "Konwersja z '$1' na '$2'  nie jest obsługiwana.",
+	"veforall-api-error-unsupported-parser-conversion": "Konwersja z '$1' na '$2' nie jest obsługiwana przez źródło parsera.",
+	"veforall-api-error-parsoid-error": "Żądanie $1 za $2 do $3 konwersja treści związanej z tytułem $4 nie powiodło się: $5"
 }

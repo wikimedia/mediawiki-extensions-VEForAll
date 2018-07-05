@@ -12,5 +12,8 @@
 	"apihelp-veforall-parsoid-utils-param-content": "התוכן להמרה",
 	"apihelp-veforall-parsoid-utils-param-title": "כותרת הדף שבו נמצא התוכן",
 	"apihelp-veforall-parsoid-utils-param-pageid": "המספר המזהה של הדף שבו נמצא התוכן",
-	"apihelp-veforall-parsoid-utils-example-1": "המרת הטקסט ''blah'' מקוד ויקי ל־HTML"
+	"apihelp-veforall-parsoid-utils-example-1": "המרת הטקסט ''blah'' מקוד ויקי ל־HTML",
+	"veforall-api-error-unsupported-conversion": "המרה מ־$1 ל־$2 אינה נתמכת.",
+	"veforall-api-error-unsupported-parser-conversion": "המרה מ־$1 ל־$2 אינה נתמכת על־ידי מפענח הליבה.",
+	"veforall-api-error-parsoid-error": "בקשת $1 להמרת תוכן המחובר לכותרת $4 מ־$2 ל־$3 נכשלה: $5"
 }

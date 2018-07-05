@@ -8,5 +8,6 @@
 	"apihelp-veforall-parsoid-utils-param-from": "'html' o 'wikitext'",
 	"apihelp-veforall-parsoid-utils-param-to": "'html' o 'wikitext'",
 	"apihelp-veforall-parsoid-utils-param-content": "contenuto da convertire",
-	"apihelp-veforall-parsoid-utils-example-1": "converti ''blah'' da wikitesto a html"
+	"apihelp-veforall-parsoid-utils-example-1": "converti ''blah'' da wikitesto a html",
+	"veforall-api-error-unsupported-conversion": "La conversione da '$1' a '$2' non è supportata."
 }

@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Piramidion"
+		]
+	},
+	"veforall-desc": "Бібліотека для розширень для додавання візуального редактора",
+	"veforall-switch-editor-tool-title": "Перемкнути на редактор вікірозмітки",
+	"apihelp-veforall-parsoid-utils-summary": "Конвертувати текст туди й назад, з вікірозмітки в HTML",
+	"apihelp-veforall-parsoid-utils-param-from": "'html' або 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-to": "'html' або 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-content": "вміст для конвертування",
+	"apihelp-veforall-parsoid-utils-param-title": "назва сторінки із необхідним вмістом",
+	"apihelp-veforall-parsoid-utils-param-pageid": "ідентифікатор сторінки з необхідним вмістом",
+	"apihelp-veforall-parsoid-utils-example-1": "конвертувати ''blah'' з вікірозмітки в html",
+	"veforall-api-error-unsupported-conversion": "Конвертування з «$1» у «$2» не підтримується.",
+	"veforall-api-error-unsupported-parser-conversion": "Конвертування з «$1» у «$2» не підтримується ядром парсера.",
+	"veforall-api-error-parsoid-error": "Запит $1 щодо конвертування вмісту, пов'язаного з назвою $4, з $2 у $3, завершився невдачею: $5"
+}

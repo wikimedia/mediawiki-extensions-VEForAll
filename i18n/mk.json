@@ -12,5 +12,8 @@
 	"apihelp-veforall-parsoid-utils-param-content": "содржина за претворање.",
 	"apihelp-veforall-parsoid-utils-param-title": "наслов на страницата што ја има содржината",
 	"apihelp-veforall-parsoid-utils-param-pageid": "назнака на страницата што ја има содржината",
-	"apihelp-veforall-parsoid-utils-example-1": "претвори го ''бла'' од викитекст во HTML"
+	"apihelp-veforall-parsoid-utils-example-1": "претвори го ''бла'' од викитекст во HTML",
+	"veforall-api-error-unsupported-conversion": "Претворањето од „$1“ во „$2“ не е поддржано.",
+	"veforall-api-error-unsupported-parser-conversion": "Претворањето од „$1“ во „$2“ не е поддржано од јадрениот расчленувач.",
+	"veforall-api-error-parsoid-error": "Не успеа барањето кон $1 за претворање на $2 во $3 на содржината поврзана со насловот „$4“: $5"
 }

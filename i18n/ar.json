@@ -12,5 +12,8 @@
 	"apihelp-veforall-parsoid-utils-param-content": "محتوى ليتم تحويله.",
 	"apihelp-veforall-parsoid-utils-param-title": "عنوان الصفحة التي تحمل المحتوى",
 	"apihelp-veforall-parsoid-utils-param-pageid": "معرف الصفحة للصفحة التي تحتفظ بالمحتوى",
-	"apihelp-veforall-parsoid-utils-example-1": "تحويل ''blah'' من نص الويكي إلى html"
+	"apihelp-veforall-parsoid-utils-example-1": "تحويل ''blah'' من نص الويكي إلى html",
+	"veforall-api-error-unsupported-conversion": "التحويل من \"$1\" إلى \"$2\" غير مدعوم.",
+	"veforall-api-error-unsupported-parser-conversion": "التحويل من \"$1\" إلى \"$2\" غير مدعوم من قبل المحلل الأساسي.",
+	"veforall-api-error-parsoid-error": "فشل طلب $1 لتحويل $2 إلى $3 من المحتوى المتصل بالعنوان $4: $5"
 }

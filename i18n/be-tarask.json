@@ -13,5 +13,7 @@
 	"apihelp-veforall-parsoid-utils-param-title": "назва старонкі, якая ўтрымлівае зьмест",
 	"apihelp-veforall-parsoid-utils-param-pageid": "ідэнтыфікатар старонкі, якая ўтрымлівае зьмест",
 	"apihelp-veforall-parsoid-utils-example-1": "ператварыць ''blah'' зь вікітэксту ў html",
-	"veforall-api-error-unsupported-conversion": "Канвэртацыя з «$1» у «$2» не падтрымліваецца."
+	"veforall-api-error-unsupported-conversion": "Канвэртацыя з «$1» у «$2» не падтрымліваецца.",
+	"veforall-api-error-unsupported-parser-conversion": "Канвэртацыя з «$1» у «$2» не падтрымліваецца парсэрам ядра.",
+	"veforall-api-error-parsoid-error": "Запыт $1 для канвэртацыі зьместу $2 у $3, зьвязанага з назвай $4, не атрымаўся: $5"
 }

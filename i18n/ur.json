@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Muhammad Shuaib"
+		]
+	},
+	"veforall-desc": "بصری خانہ ترمیم استعمال کرنے کی غرض سے توسیعات کے لیے ایک لائبریری",
+	"veforall-switch-editor-tool-title": "ویکی خانہ ترمیم میں جائیں",
+	"apihelp-veforall-parsoid-utils-summary": "متن کو ویکی متن سے HTML میں تبدیلی کریں",
+	"apihelp-veforall-parsoid-utils-param-from": "'html' یا 'ویکی متن'",
+	"apihelp-veforall-parsoid-utils-param-to": "'html' یا 'ویکی متن'",
+	"apihelp-veforall-parsoid-utils-param-content": "مواد برائے تبدیلی",
+	"apihelp-veforall-parsoid-utils-param-title": "مواد پر مشتمل صفحہ کا عنوان",
+	"apihelp-veforall-parsoid-utils-param-pageid": "مواد پر مشتمل صفحہ کا شناختی نمبر",
+	"apihelp-veforall-parsoid-utils-example-1": "\"blah\" کو ویکی متن سے html ميں منتقل کریں",
+	"veforall-api-error-unsupported-conversion": "«$1» سے «$2» میں تبدیلی ممکن نہیں۔",
+	"veforall-api-error-unsupported-parser-conversion": "«$1» سے «$2» میں منتقلی کو بنیادی تجزیہ کار معاونت فراہم نہیں کرتا۔",
+	"veforall-api-error-parsoid-error": "$2 کو $1 سے $3 میں منتقل کرنے کی درخواست جو $4 عنوان سے متعلق ہے، ناکام ہوئی: $5"
+}

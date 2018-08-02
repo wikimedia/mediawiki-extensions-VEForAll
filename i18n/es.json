@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Adjen",
-			"Fitoschido"
+			"Fitoschido",
+			"Jelou"
 		]
 	},
 	"veforall-desc": "Una biblioteca para que las extensiones integren el editor visual",
@@ -14,5 +15,5 @@
 	"apihelp-veforall-parsoid-utils-param-title": "título de la página que alberga el contenido",
 	"apihelp-veforall-parsoid-utils-param-pageid": "identificador de la página que alberga el contenido",
 	"apihelp-veforall-parsoid-utils-example-1": "Convierte ''blah'' de wikitext a html",
-	"veforall-api-error-unsupported-conversion": "No se admite la conversión de «$1» a «$2»."
+	"veforall-api-error-unsupported-conversion": "No es compatible la conversión de «$1» a «$2»."
 }

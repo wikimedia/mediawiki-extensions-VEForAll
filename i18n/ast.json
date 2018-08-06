@@ -12,5 +12,8 @@
 	"apihelp-veforall-parsoid-utils-param-content": "conteníu a convertir.",
 	"apihelp-veforall-parsoid-utils-param-title": "títulu de la páxina que tien el conteníu",
 	"apihelp-veforall-parsoid-utils-param-pageid": "identificador de la páxina que tien el conteníu",
-	"apihelp-veforall-parsoid-utils-example-1": "convierte ''blah'' de testu wiki a html"
+	"apihelp-veforall-parsoid-utils-example-1": "convierte ''blah'' de testu wiki a html",
+	"veforall-api-error-unsupported-conversion": "Nun hai encontu pa la conversión de «$1» a «$2».",
+	"veforall-api-error-unsupported-parser-conversion": "Nun hai encontu pa la conversión de «$1» a «$2» nel nucleu del analizador.",
+	"veforall-api-error-parsoid-error": "La solicitú a $1 pa convertir el conteníu de $2 a $3 conectada col títulu $4 falló: $5"
 }

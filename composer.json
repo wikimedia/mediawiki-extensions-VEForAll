@@ -1,5 +1,5 @@
 {
-	"name": "mediawiki/veforall-extension",
+	"name": "mediawiki/v-e-for-all",
 	"type": "mediawiki-extension",
 	"require-dev": {
 		"jakub-onderka/php-parallel-lint": "1.0.0",

@@ -36,7 +36,7 @@
 	}
 
 	function catchAndDelayClickEvent( buttonId ) {
-		var updateNeeded, i;
+		var updateNeeded, i, curTime, finishTime;
 
 		if ( !clickCount[ buttonId ] ) {
 			clickCount[ buttonId ] = 0;
@@ -51,6 +51,26 @@
 				if ( veInstances[ i ].target.getSurface().getView().isFocused() ) {
 					veInstances[ i ].target.getSurface().getView().blur();
 					updateNeeded = true;
+					// @HACK - total hack to get focused
+					// textareas to actually submit correctly.
+					// Unfortunately, the setTimeout() calls below
+					// don't seem to work, because they're
+					// asynchronous, so we use an old-fashioned
+					// synchronous call, equivalent to sleep(),
+					// to delay until (hopefully) the VE
+					// conversion of its contents occurs.
+					// This is undoubtedly a bad solution, and
+					// the right approach would be to only
+					// submit once the conversion has occurred
+					// (i.e., what clickWhenApiCallDone() is
+					// supposed to do). However, this is the
+					// easier solution, and it seems to fix
+					// the problem, in most cases.
+					curTime = new Date().getTime();
+					finishTime = curTime + 500;
+					while ( curTime < finishTime ) {
+						curTime = new Date().getTime();
+					}
 				}
 			}
 			if ( ( updateNeeded || jQuery.active > 0 ) && clickCount[ buttonId ] < 2 ) {

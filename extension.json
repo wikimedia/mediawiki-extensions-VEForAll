@@ -15,7 +15,11 @@
 		}
 	},
 	"AutoloadClasses": {
-		"VEForAll\\ApiParsoidUtils": "includes/ApiParsoidUtils.php"
+		"VEForAll\\ApiParsoidUtils": "includes/ApiParsoidUtils.php",
+		"VEForAll\\VEForAllHooks": "includes/VEForAllHooks.php"
+	},
+	"Hooks": {
+		"BeforePageDisplay": "VEForAll\\VEForAllHooks::onBeforePageDisplay"
 	},
 	"MessagesDirs": {
 		"VEForAll": [

@@ -17,6 +17,11 @@
 		clickCount = [];
 
 	function initVisualEditor() {
+		var config = mw.config.get( 'VEForAll' );
+		if ( !config.VisualEditorEnable ) {
+			return;
+		}
+
 		// Init VisualEditor platform
 		new ve.init.mw.Platform( ).initialize()
 				.fail( function () {
@@ -100,6 +105,11 @@
 	}
 
 	jQuery.fn.applyVisualEditor = function () {
+		var config = mw.config.get( 'VEForAll' );
+		if ( !config.VisualEditorEnable ) {
+			return;
+		}
+
 		// var logo = $('<div class="ve-demo-logo"></div>');
 		// var toolbar = $('<div class="ve-demo-toolbar ve-demo-targetToolbar"></div>');
 		// var editor = $('<div class="ve-demo-editor"></div>');

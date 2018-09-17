@@ -1,3 +1,5 @@
+/* globals mediaWiki, OO, ve */
+
 ( function ( mw, OO, ve ) {
 	'use strict';
 	mw.veForAll = mw.veForAll || {
@@ -23,7 +25,6 @@
 		this.toolbarPosition = 'bottom';
 
 		if ( node.hasClass( 'toolbarOnTop' ) ) {
-			console.log( 'toolbarOnTop' );
 			this.toolbarPosition = 'top';
 			this.toolbarAutoHide = false;
 			config.toolbarConfig.floatable = true;
@@ -116,11 +117,11 @@
 
 		if ( switchable ) {
 			mw.veForAll.Target.static.actionGroups = [ {
-					type: 'list',
-					icon: 'edit',
-					title: mw.msg( 'visualeditor-mweditmode-tooltip' ),
-					include: [ 'editModeVisual', 'editModeSource' ]
-				} ];
+				type: 'list',
+				icon: 'edit',
+				title: mw.msg( 'visualeditor-mweditmode-tooltip' ),
+				include: [ 'editModeVisual', 'editModeSource' ]
+			} ];
 		} else {
 			mw.veForAll.Target.static.actionGroups = [];
 		}
@@ -131,10 +132,10 @@
 	 */
 	mw.veForAll.Target.prototype.setPulloutToolbar = function () {
 		var target = this;
-		this.getSurface().getView().on( 'blur', function ( data ) {
+		this.getSurface().getView().on( 'blur', function () {
 			target.updateToolbarVisibility();
 		} );
-		this.getSurface().getView().on( 'focus', function ( data ) {
+		this.getSurface().getView().on( 'focus', function () {
 			target.updateToolbarVisibility();
 		} );
 		this.updateToolbarVisibility();
@@ -148,9 +149,9 @@
 			return;
 		}
 		if ( $( this.$node ).closest( '.ve-area-wrapper' ).find( ':focus' ).length > 0 ) {
-			this.getToolbar().$element.show( 500 );
+			this.getToolbar().$element.show( 100 );
 		} else {
-			this.getToolbar().$element.hide( 500 );
+			this.getToolbar().$element.hide( 100 );
 		}
 	};
 
@@ -161,12 +162,13 @@
 	 */
 	mw.veForAll.Target.prototype.createWithHtmlContent = function ( content ) {
 		var target = this,
-			$focusedElement = $( ':focus' ),
-			surface = this.addSurface(
-				ve.dm.converter.getModelFromDom(
-					ve.createDocumentFromHtml( content )
-				)
-			);
+			$focusedElement = $( ':focus' );
+
+		this.addSurface(
+			ve.dm.converter.getModelFromDom(
+				ve.createDocumentFromHtml( content )
+			)
+		);
 		// this.setSurface( surface );
 		// this.$element.insertAfter( this.$node );
 
@@ -174,15 +176,14 @@
 		$( this.$node ).before( this.$element );
 
 		$( this.$node ).hide()
-			.removeClass( 'oo-ui-texture-pending' )
-			.prop( 'disabled', false );
+			.removeClass( 'oo-ui-texture-pending' ).prop( 'disabled', false );
 
 		// When editor loses focus, update the field input.
-		this.getSurface().getView().on( 'blur', function ( data ) {
-			target.updateContent();
-		} );
-		this.getSurface().on( 'switchEditor', function ( data ) {
-			console.log( 'switchEditor event' );
+		// this.getSurface().getView().on( 'blur', function ( data ) {
+		// target.updateContent();
+		// } );
+
+		this.getSurface().on( 'switchEditor', function () {
 			target.switchEditor();
 		} );
 
@@ -190,7 +191,7 @@
 		// this.getSurface().getView().on( 'blur', function (data) {
 		// 	target.updateToolbarVisibility();
 		// } );
-		this.getSurface().getView().on( 'focus', function ( data ) {
+		this.getSurface().getView().on( 'focus', function () {
 			target.updateToolbarVisibility();
 		} );
 		target.updateToolbarVisibility();
@@ -204,16 +205,21 @@
 		target.getToolbar().onWindowResize();
 		target.onToolbarResize();
 		target.onContainerScroll();
+
+		// emit ready-state event
+		target.emit( 'editor-ready' );
 	};
 
 	/**
 	 * Update the original textarea value with the content of VisualEditor
 	 * surface (convert the content into wikitext)
+	 *
+	 * @return {Promise}
 	 */
 	mw.veForAll.Target.prototype.updateContent = function () {
 		var surface = this.getSurface();
-		if ( surface !== null ) {
-			this.convertToWikiText( surface.getHtml() );
+		if ( surface !== null && !$( this.$node ).is( ':visible' ) ) {
+			return this.convertToWikiText( surface.getHtml() );
 		}
 	};
 
@@ -231,6 +237,8 @@
 			.prop( 'disabled', true )
 			.addClass( 'oo-ui-texture-pending' );
 
+		$( this.$element ).addClass( 'oo-ui-texture-pending' );
+
 		apiCall = new mw.Api().post( {
 			action: 'veforall-parsoid-utils',
 			from: oldFormat,
@@ -242,20 +250,28 @@
 			$( target.$node ).change();
 
 			$( target.$node )
-					.removeClass( 'oo-ui-texture-pending' )
-					.prop( 'disabled', false );
-		} )
-				.fail( function ( data ) {
-					console.log( 'Error converting to wikitext' );
-				} );
+				.prop( 'disabled', false )
+				.removeClass( 'oo-ui-texture-pending' );
+
+			$( target.$element ).removeClass( 'oo-ui-texture-pending' );
+
+		} ).fail( function () {
+			// console.log( 'Error converting to wikitext' );
+		} );
+
+		return apiCall;
 
 	};
 
-	mw.veForAll.Target.prototype.convertToHtml = function ( content ) {
+	mw.veForAll.Target.prototype.convertToHtml = function ( content, callback ) {
 		var target = this,
 			oldFormat = 'wikitext',
 			newFormat = 'html',
 			apiCall;
+
+		$( this.$node )
+			.prop( 'disabled', true )
+			.addClass( 'oo-ui-texture-pending' );
 
 		apiCall = new mw.Api().post( {
 			action: 'veforall-parsoid-utils',
@@ -265,47 +281,66 @@
 			title: this.getPageName()
 		} ).then( function ( data ) {
 			target.createWithHtmlContent( data[ 'veforall-parsoid-utils' ].content );
-		} ).fail( function ( data ) {
-			console.log( 'Error converting to html' );
+			$( target.$node )
+				.prop( 'disabled', false )
+				.removeClass( 'oo-ui-texture-pending' );
+
+			if ( typeof callback === 'function' ) {
+				callback( target );
+			}
+
+		} ).fail( function () {
+			// console.log( 'Error converting to html' );
 		} );
 	};
 
-	mw.veForAll.Target.prototype.switchEditor = function ( content ) {
-		var textarea = this.$node;
+	mw.veForAll.Target.prototype.switchEditor = function () {
+		var textarea = this.$node,
+			target = this;
 
 		if ( $( textarea ).is( ':visible' ) ) {
-			// switch back to VE
+			// Switch to VE editor
+
 			this.clearSurfaces();
-			$( textarea ).hide();
+			// $( textarea ).hide();
 			// $(this.getSurface().$element).show();
-			// this.getSurface().getView().focus();
-			this.convertToHtml( $( textarea ).val() );
+			this.convertToHtml( $( textarea ).val(), function ( target ) {
+				target.getSurface().getView().focus();
+			} );
+
 			$( textarea ).parent().find( '.oo-ui-icon-eye' )
 				.removeClass( 'oo-ui-icon-eye' )
 				.addClass( 'oo-ui-icon-wikiText' );
+
 			$( textarea ).parent().find( '.oo-ui-tool-link' )
 				.attr( 'title', OO.ui.deferMsg( 'veforall-switch-editor-tool-title' ) );
+
 		} else {
+			// Switch to markup editor
+
 			$( textarea ).parent().find( '.oo-ui-icon-wikiText' )
 				.removeClass( 'oo-ui-icon-wikiText' )
 				.addClass( 'oo-ui-icon-eye' );
+
 			$( textarea ).parent().find( '.oo-ui-tool-link' )
 				.attr( 'title', OO.ui.deferMsg( 'visualeditor-welcomedialog-switch-ve' ) );
-			// Switch to text editor
-			$( this.getSurface().$element ).hide();
-			$( textarea ).show().focus();
-			this.updateContent();
+
+			this.updateContent().then( function () {
+				$( target.getSurface().$element ).hide();
+				$( textarea ).show().focus();
+			} );
 		}
 	};
 
 	/**
 	 * Attach the toolbar to the DOM
-	 * redifine attach Toolbar function to place on the bottom
+	 * redefine attach Toolbar function to place on the bottom
+	 *
 	 */
-	mw.veForAll.Target.prototype.attachToolbar = function ( surface ) {
+	mw.veForAll.Target.prototype.attachToolbar = function () {
 		var toolbar = this.getToolbar();
 
-		if ( this.toolbarPosition == 'top' ) {
+		if ( this.toolbarPosition === 'top' ) {
 			toolbar.$element.insertBefore( toolbar.getSurface().$element );
 		} else {
 			$( this.$node ).after( toolbar.$element );

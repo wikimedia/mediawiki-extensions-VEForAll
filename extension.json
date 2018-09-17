@@ -42,7 +42,8 @@
 				"veforall-switch-editor-tool-title"
 			],
 			"dependencies": [
-				"ext.veforall.core"
+				"ext.veforall.core",
+				"mediawiki.confirmCloseWindow"
 			]
 		},
 		"ext.veforall.core": {

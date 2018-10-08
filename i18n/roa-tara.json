@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"veforall-desc": "'Na libbrerie pe l'estenziune da aggiungere a VisualEditor",
+	"apihelp-veforall-parsoid-utils-param-from": "'html' o 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-to": "'html' o 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-content": "condenute da convertì"
+}

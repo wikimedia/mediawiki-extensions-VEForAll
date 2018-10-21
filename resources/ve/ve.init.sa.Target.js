@@ -1,3 +1,4 @@
+/* globals OO, ve */
 
 ve.init.sa = ve.init.sa || {};
 

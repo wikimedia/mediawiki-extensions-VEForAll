@@ -10,5 +10,10 @@
 	"apihelp-veforall-parsoid-utils-param-from": "'html' o 'wikitext'",
 	"apihelp-veforall-parsoid-utils-param-to": "'html' o 'wikitext'",
 	"apihelp-veforall-parsoid-utils-param-content": "condenute da convertì",
-	"apihelp-veforall-parsoid-utils-param-title": "titole d'a pàgene ca tène 'u condenute"
+	"apihelp-veforall-parsoid-utils-param-title": "titole d'a pàgene ca tène 'u condenute",
+	"apihelp-veforall-parsoid-utils-param-pageid": "ID d'a pàgene ca tène 'u condenute",
+	"apihelp-veforall-parsoid-utils-example-1": "converte \"blah\" da uicchitest jndr'à html",
+	"veforall-api-error-unsupported-conversion": "'A conversione da '$1' a '$2' non g'è supportate.",
+	"veforall-api-error-unsupported-parser-conversion": "'A conversione da '$1' a '$2' non g'è supportate da l'analizzatore prengepàle.",
+	"veforall-api-error-parsoid-error": "Cirche $1 pe $2 sus a $3, conversione d'u condenute collegate a 'u titole $4 fallite: $5"
 }

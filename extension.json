@@ -20,7 +20,8 @@
 	},
 	"Hooks": {
 		"BeforePageDisplay": "VEForAll\\VEForAllHooks::onBeforePageDisplay",
-		"MakeGlobalVariablesScript":  "VEForAll\\VEForAllHooks::onMakeGlobalVariablesScript"
+		"MakeGlobalVariablesScript":  "VEForAll\\VEForAllHooks::onMakeGlobalVariablesScript",
+		"ResourceLoaderRegisterModules": "VEForAll\\VEForAllHooks::onResourceLoaderRegisterModules"
 	},
 	"MessagesDirs": {
 		"VEForAll": [
@@ -45,30 +46,6 @@
 			"dependencies": [
 				"ext.veforall.core",
 				"mediawiki.confirmCloseWindow"
-			]
-		},
-		"ext.veforall.core": {
-			"scripts": [
-				"resources/ve/ve.init.sa.Target.js",
-				"resources/ui/ui.CommandRegistry.js",
-				"resources/ui/ui.SwitchEditorAction.js",
-				"resources/ui/ui.SwitchEditorTool.js",
-				"resources/ext.veforall.target.js",
-				"resources/ext.veforall.targetwide.js",
-				"resources/ext.veforall.editor.js"
-			],
-			"dependencies": [
-				"ext.visualEditor.core",
-				"ext.visualEditor.core.desktop",
-				"ext.visualEditor.data",
-				"ext.visualEditor.icons",
-				"ext.visualEditor.mediawiki",
-				"ext.visualEditor.desktopTarget",
-				"ext.visualEditor.mwextensions.desktop",
-				"ext.visualEditor.mwimage",
-				"ext.visualEditor.mwlink",
-				"ext.visualEditor.mwtransclusion",
-				"oojs-ui.styles.icons-editing-advanced"
 			]
 		}
 	},

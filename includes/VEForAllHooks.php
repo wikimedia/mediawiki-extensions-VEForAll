@@ -2,7 +2,12 @@
 
 namespace VEForAll;
 
+use FatalError;
 use Hooks;
+use MWException;
+use OutputPage;
+use ResourceLoader;
+use Skin;
 
 class VEForAllHooks {
 
@@ -149,10 +154,10 @@ class VEForAllHooks {
 
 	/**
 	 * @param array &$vars
-	 * @param \OutputPage $out
+	 * @param OutputPage $out
 	 *
-	 * @throws \FatalError
-	 * @throws \MWException
+	 * @throws FatalError
+	 * @throws MWException
 	 */
 	public static function onMakeGlobalVariablesScript( &$vars, $out ) {
 		$vars[ 'VEForAllToolbarNormal' ] = self::getVeToolbarConfig( 'normal' );
@@ -163,12 +168,57 @@ class VEForAllHooks {
 	 * @param string $type
 	 *
 	 * @return array
-	 * @throws \FatalError
-	 * @throws \MWException
+	 * @throws FatalError
+	 * @throws MWException
 	 */
 	public static function getVeToolbarConfig( $type = 'normal' ) {
 		Hooks::run( 'VEForAllToolbarConfig' . ucfirst( $type ), [ &self::$defaultConfig[ $type ] ] );
 		return array_values( self::$defaultConfig[ $type ] );
+	}
+
+	/**
+	 * ResourceLoaderRegisterModules hook handler
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ResourceLoaderRegisterModules
+	 * @param ResourceLoader $resourceLoader The ResourceLoader object
+	 * @throws MWException
+	 */
+	public static function onResourceLoaderRegisterModules( ResourceLoader $resourceLoader ) {
+		global $wgVersion;
+
+		$dir = dirname( __DIR__ ) . DIRECTORY_SEPARATOR;
+
+		$info = [
+			'localBasePath' => $dir . 'resources',
+			'remoteExtPath' => 'VEForAll/resources',
+			'scripts' => [
+				'ui/ui.CommandRegistry.js',
+				'ui/ui.SwitchEditorAction.js',
+				'ui/ui.SwitchEditorTool.js',
+				'ext.veforall.target.js',
+				'ext.veforall.targetwide.js',
+				'ext.veforall.editor.js'
+			],
+			'dependencies' => [
+				'ext.visualEditor.core',
+				'ext.visualEditor.core.desktop',
+				'ext.visualEditor.data',
+				'ext.visualEditor.icons',
+				'ext.visualEditor.mediawiki',
+				'ext.visualEditor.desktopTarget',
+				'ext.visualEditor.mwextensions.desktop',
+				'ext.visualEditor.mwimage',
+				'ext.visualEditor.mwlink',
+				'ext.visualEditor.mwtransclusion',
+				'oojs-ui.styles.icons-editing-advanced'
+			]
+		];
+
+		if ( version_compare( $wgVersion, '1.32', '<' ) ) {
+			// Needed for backward compatibility with MediaWiki 1.31 and older.
+			$info['scripts'][] = 've/ve.init.sa.Target.js';
+		}
+
+		$resourceLoader->register( 'ext.veforall.core', $info );
 	}
 
 }

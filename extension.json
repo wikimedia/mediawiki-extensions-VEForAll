@@ -19,7 +19,8 @@
 		"VEForAll\\VEForAllHooks": "includes/VEForAllHooks.php"
 	},
 	"Hooks": {
-		"BeforePageDisplay": "VEForAll\\VEForAllHooks::onBeforePageDisplay"
+		"BeforePageDisplay": "VEForAll\\VEForAllHooks::onBeforePageDisplay",
+		"MakeGlobalVariablesScript":  "VEForAll\\VEForAllHooks::onMakeGlobalVariablesScript"
 	},
 	"MessagesDirs": {
 		"VEForAll": [

@@ -195,7 +195,11 @@
 	};
 
 	mw.veForAll.Target.prototype.getPageName = function () {
-		return mw.config.get( 'wgPageName' ).split( /(\\|\/)/g ).pop();
+		if ( mw.config.get( 'wgPageFormsTargetName' ) ) {
+			return mw.config.get( 'wgPageFormsTargetName' );
+		} else {
+			return mw.config.get( 'wgPageName' );
+		}
 	};
 
 	mw.veForAll.Target.prototype.convertToWikiText = function ( content ) {

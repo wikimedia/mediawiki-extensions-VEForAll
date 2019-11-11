@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"veforall-desc": "Et bibliotek for utvidelser for å legge til VisualEditor",
+	"veforall-switch-editor-tool-title": "Bytt til wikitekstredigering",
+	"apihelp-veforall-parsoid-utils-summary": "Konverter tekst fram og tilbake mellom wikitekst og HTML",
+	"apihelp-veforall-parsoid-utils-param-from": "«html» eller «wikitext»",
+	"apihelp-veforall-parsoid-utils-param-to": "«html» eller «wikitext»",
+	"apihelp-veforall-parsoid-utils-param-content": "innhold som skal konverteres",
+	"apihelp-veforall-parsoid-utils-param-title": "tittelen til siden som har innholdet",
+	"apihelp-veforall-parsoid-utils-param-pageid": "side-ID-en til siden som har innholdet",
+	"apihelp-veforall-parsoid-utils-example-1": "konverter «blah» fra wikitekst til HTML",
+	"veforall-api-error-unsupported-conversion": "Konvertering fra «$1» til «$2» støttes ikke.",
+	"veforall-api-error-unsupported-parser-conversion": "Konvertering fra «$1» til «$2» støttes ikke av kjerneparseren.",
+	"veforall-api-error-parsoid-error": "Forespørsel til $1 for konvertering fra $2 til $3 av innholdet i tittelen $4 mislyktes: $5"
+}

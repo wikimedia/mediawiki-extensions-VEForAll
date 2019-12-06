@@ -166,7 +166,7 @@
 			target.updateToolbarVisibility();
 		} );
 		target.updateToolbarVisibility();
-
+		this.setDir();
 		// focus VE instance if textarea had focus
 		if ( $focusedElement.length && this.$node.is( $focusedElement ) ) {
 			this.getSurface().getView().focus();
@@ -237,6 +237,13 @@
 		return apiCall;
 
 	};
+	mw.veForAll.Target.prototype.setDir = function () {
+		var view = this.surface.getView(),
+			dir = $( 'body' ).is( '.rtl' ) ? 'rtl' : 'ltr';
+		if ( view ) {
+			view.getDocument().setDir( dir );
+		}
+	};
 
 	mw.veForAll.Target.prototype.convertToHtml = function ( content, callback ) {
 		var target = this,
@@ -290,6 +297,7 @@
 			$( textarea ).parent().find( '.oo-ui-tool-link' )
 				.attr( 'title', OO.ui.deferMsg( 'veforall-switch-editor-tool-title' ) );
 
+			this.setDir();
 		} else {
 			// Switch to markup editor
 

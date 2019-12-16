@@ -83,6 +83,14 @@
 		return veInstances;
 	};
 
-	initVisualEditor();
+	if ( mw.hook( 'pf.formSetupAfter' ) ) {
+		// This hook was added in Page Forms 4.7 - it helps to ensure that the VEForAll
+		// init code does not get called too soon.
+		mw.hook( 'pf.formSetupAfter' ).add( function () {
+			initVisualEditor();
+		} );
+	} else {
+		initVisualEditor();
+	}
 
 }( jQuery, mw ) );

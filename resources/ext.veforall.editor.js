@@ -70,9 +70,6 @@
 	 * @param {string} [content='']
 	 */
 	mw.veForAll.Editor.prototype.init = function ( content ) {
-		var $veNode, htmlDoc, surface, $documentNode,
-			$focusedElement = $( ':focus' );
-
 		// ve.createDocumentFromHtml documents support for an empty string
 		// to create an empty document, but does not mention other falsy values.
 		content = content || '';

@@ -14,6 +14,10 @@
 
 	"globals": {
 		"mw": false,
-		"$": false
+		"mediaWiki": false,
+		"$": false,
+		"jQuery": false,
+		"ve": false,
+		"OO": false
 	}
 }

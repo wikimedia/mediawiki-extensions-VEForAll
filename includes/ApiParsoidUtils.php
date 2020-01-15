@@ -3,15 +3,15 @@
 namespace VEForAll;
 
 use ApiBase;
+use ApiMessage;
+use MediaWiki\Logger\LoggerFactory;
 use MultiHttpClient;
+use ParserOptions;
+use ParsoidVirtualRESTService;
 use RequestContext;
 use Title;
 use User;
-use ParserOptions;
 use VirtualRESTServiceClient;
-use ApiMessage;
-use ParsoidVirtualRESTService;
-use MediaWiki\Logger\LoggerFactory;
 
 /**
  * Heavily based on the ApiParsoidUtils and Utils classes from the
@@ -86,7 +86,7 @@ class ApiParsoidUtils extends ApiBase {
 
 		$convertedContent = '';
 		$vrsObject = $this->getVRSObject();
-		if ( is_null( $vrsObject ) ) {
+		if ( $vrsObject === null ) {
 			if ( $from !== 'wikitext' || $to !== 'html' ) {
 				$this->dieCustomUsageMessage(
 					'veforall-api-error-unsupported-parser-conversion', [ $from, $to ] );

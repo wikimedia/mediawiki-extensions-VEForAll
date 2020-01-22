@@ -64,6 +64,7 @@
 				"ext.visualEditor.icons",
 				"ext.visualEditor.mediawiki",
 				"ext.visualEditor.desktopTarget",
+				"ext.visualEditor.mwextensions.desktop",
 				"ext.visualEditor.mwimage",
 				"ext.visualEditor.mwlink",
 				"ext.visualEditor.mwtransclusion",

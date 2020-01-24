@@ -4,5 +4,13 @@
 			"Mainframe98"
 		]
 	},
-	"veforall-switch-editor-tool-title": "Overschakelen naar wikitekstverwerker"
+	"veforall-switch-editor-tool-title": "Overschakelen naar wikitekstverwerker",
+	"apihelp-veforall-parsoid-utils-summary": "Tekst van Wikitekst naar HTML en terug converteren",
+	"apihelp-veforall-parsoid-utils-param-from": "'html' of 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-to": "'html' of 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-content": "de om te zetten inhoud",
+	"apihelp-veforall-parsoid-utils-param-title": "titel van de pagina met de inhoud",
+	"apihelp-veforall-parsoid-utils-example-1": "\"blah\" van wikitekst naar html converteren",
+	"veforall-api-error-unsupported-conversion": "De conversie van '$1' naar '$2' wordt niet ondersteund.",
+	"veforall-api-error-parsoid-error": "Het verzoek van $2 om $1 naar $3 te converteren voor inhoud gekoppeld aan de titel $4 is mislukt: $5"
 }

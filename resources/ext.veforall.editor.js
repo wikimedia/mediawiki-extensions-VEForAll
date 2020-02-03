@@ -77,6 +77,8 @@
 			} );
 		} );
 
+		mw.hook( 'veForAll.targetCreated' ).fire( this );
+
 		return this.target;
 	};
 

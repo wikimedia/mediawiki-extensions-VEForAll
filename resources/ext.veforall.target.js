@@ -68,23 +68,14 @@
 
 	mw.veForAll.Target.static.actionGroups = [
 		{ include: [ 've4aSwitchEditor' ] }
-		/*{
-		 type: 'list',
-		 icon: 'textStyle',
-		 indicator: 'down',
-		 title: OO.ui.deferMsg( 'visualeditor-toolbar-style-tooltip' ),
-		 include: [ 'bold', 'italic' ],
-		 forceExpand: [ 'bold', 'italic' ]
-		 },*/
-		// { include: [ 'link' ] }
 	];
 
 	// Allow pasting links
 	mw.veForAll.Target.static.importRules = ve.copy( mw.veForAll.Target.static.importRules );
 	mw.veForAll.Target.static.importRules.external.blacklist = OO.simpleArrayDifference(
-			mw.veForAll.Target.static.importRules.external.blacklist,
-			[ 'link/mwExternal' ]
-		);
+		mw.veForAll.Target.static.importRules.external.blacklist,
+		[ 'link/mwExternal' ]
+	);
 
 	// Static methods
 	mw.veForAll.Target.static.setSwitchable = function ( switchable ) {
@@ -164,9 +155,6 @@
 		} );
 
 		// show or hide toolbar when lose focus
-		// this.getSurface().getView().on( 'blur', function (data) {
-		// 	target.updateToolbarVisibility();
-		// } );
 		this.getSurface().getView().on( 'focus', function () {
 			target.updateToolbarVisibility();
 		} );

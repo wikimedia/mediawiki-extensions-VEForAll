@@ -194,12 +194,11 @@
 
 		/* global VisualEditorSupportCheck */
 		return !!(
-				!isMobileTarget &&
-				mw.loader.getState( 'ext.visualEditor.core' ) &&
-				mw.config.get( 'wgFlowEditorList' ).indexOf( 'visualeditor' ) !== -1 &&
-				window.VisualEditorSupportCheck && VisualEditorSupportCheck
-				);
+			!isMobileTarget &&
+			mw.loader.getState( 'ext.visualEditor.core' ) &&
+			mw.config.get( 'wgFlowEditorList' ).indexOf( 'visualeditor' ) !== -1 &&
+			window.VisualEditorSupportCheck && VisualEditorSupportCheck
+		);
 	};
 
 }( jQuery, mediaWiki, OO, ve ) );
-

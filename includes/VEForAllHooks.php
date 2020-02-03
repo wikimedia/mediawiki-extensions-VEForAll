@@ -197,25 +197,36 @@ class VEForAllHooks {
 				'ext.veforall.target.js',
 				'ext.veforall.targetwide.js',
 				'ext.veforall.editor.js'
-			],
-			'dependencies' => [
-				'ext.visualEditor.core',
-				'ext.visualEditor.core.desktop',
-				'ext.visualEditor.data',
-				'ext.visualEditor.icons',
-				'ext.visualEditor.mediawiki',
-				'ext.visualEditor.desktopTarget',
-				'ext.visualEditor.mwextensions.desktop',
-				'ext.visualEditor.mwimage',
-				'ext.visualEditor.mwlink',
-				'ext.visualEditor.mwtransclusion',
-				'oojs-ui.styles.icons-editing-advanced'
 			]
 		];
 
+		$mainDependencies = [
+			'ext.visualEditor.core',
+			'ext.visualEditor.core.desktop',
+			'ext.visualEditor.data',
+			'ext.visualEditor.icons',
+			'ext.visualEditor.mediawiki',
+			'ext.visualEditor.desktopTarget',
+			'ext.visualEditor.mwextensions.desktop',
+			'ext.visualEditor.mwimage',
+			'ext.visualEditor.mwlink',
+			'ext.visualEditor.mwtransclusion',
+			'oojs-ui.styles.icons-editing-advanced'
+		];
+
 		if ( version_compare( $wgVersion, '1.32', '<' ) ) {
-			// Needed for backward compatibility with MediaWiki 1.31 and older.
-			$info['scripts'][] = 've/ve.init.sa.Target.js';
+			// The local version of ve...Target.js is needed for backward
+			// compatibility with MediaWiki 1.31 and older.
+			$depInfo = [
+				'localBasePath' => $dir . 'resources',
+				'remoteExtPath' => 'VEForAll/resources',
+				'scripts' => 've/ve.init.sa.Target.js',
+				'dependencies' => $mainDependencies
+			];
+			$resourceLoader->register( 'ext.veforall.dep', $depInfo );
+			$info['dependencies'][] = 'ext.veforall.dep';
+		} else {
+			$info['dependencies'] = $mainDependencies;
 		}
 
 		$resourceLoader->register( 'ext.veforall.core', $info );

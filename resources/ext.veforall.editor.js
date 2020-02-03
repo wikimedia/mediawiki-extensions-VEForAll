@@ -56,11 +56,27 @@
 	mw.veForAll.Editor.prototype.initCallbacks = [];
 
 	mw.veForAll.Editor.prototype.createTarget = function () {
+		var self = this;
+
 		if ( $( this.$node ).hasClass( 'toolbarOnTop' ) ) {
 			this.target = new mw.veForAll.Targetwide( this.$node, $( this.$node ).val() );
 		} else {
 			this.target = new mw.veForAll.Target( this.$node, $( this.$node ).val() );
 		}
+
+		// Handle keyup events on ve surfaces and textarea to let other know that something has changed there.
+		self.target.on( 'editor-ready', function () {
+			// Catch keyup events on surface to comply with saveAndContinue button state and changes warning.
+			self.target.getSurface().getView().on( 'keyup', function () {
+				self.$node.trigger( 'change' );
+			} );
+
+			// Catch keyup events on raw textarea to use changes warning on page reload.
+			self.target.$node.on( 'keyup', function () {
+				self.$node.trigger( 'change' );
+			} );
+		} );
+
 		return this.target;
 	};
 

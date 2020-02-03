@@ -52,26 +52,7 @@
 		}
 
 		return this.each( function () {
-
-			var textarea = this,
-				veEditor = new mw.veForAll.Editor( this, $( this ).val() );
-
-			veEditor.initCallbacks.push( function () {
-				// Handle keyup events on ve surfaces and textarea to let other know that something has changed there
-				veEditor.target.on( 'editor-ready', function () {
-
-					// Catch keyup events on surface to comply with saveAndContinue button state and changes warning
-					veEditor.target.getSurface().getView().on( 'keyup', function () {
-						$( textarea ).trigger( 'change' );
-					} );
-
-					// Catch keyup events on raw textarea to use changes warning on page reload
-					veEditor.target.$node.on( 'keyup', function () {
-						$( textarea ).trigger( 'change' );
-					} );
-				} );
-			} );
-
+			var veEditor = new mw.veForAll.Editor( this, $( this ).val() );
 			veInstances.push( veEditor );
 		} );
 	};

@@ -167,7 +167,7 @@ class ApiParsoidUtils extends ApiBase {
 	 */
 	private function parser( $content, Title $title ) {
 		global $wgParser;
-		$options = new ParserOptions;
+		$options = new ParserOptions( $this->getUser() );
 		$options->setTidy( true );
 		$output = $wgParser->parse( $content, $title, $options );
 		return $output->getText( [ 'enableSectionEditLinks' => false ] );

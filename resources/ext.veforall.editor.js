@@ -64,14 +64,17 @@
 			this.target = new mw.veForAll.Target( this.$node, $( this.$node ).val() );
 		}
 
-		// Handle keyup events on ve surfaces and textarea to let other know that something has changed there.
+		// Handle keyup events on ve surfaces and textarea to let
+		// others know that something has changed there.
 		self.target.on( 'editor-ready', function () {
-			// Catch keyup events on surface to comply with saveAndContinue button state and changes warning.
+			// Catch keyup events on surface to comply with
+			// saveAndContinue button state and changes warning.
 			self.target.getSurface().getView().on( 'keyup', function () {
 				self.$node.trigger( 'change' );
 			} );
 
-			// Catch keyup events on raw textarea to use changes warning on page reload.
+			// Catch keyup events on raw textarea to use changes
+			// warning on page reload.
 			self.target.$node.on( 'keyup', function () {
 				self.$node.trigger( 'change' );
 			} );
@@ -88,11 +91,6 @@
 	 * @param {string} [content='']
 	 */
 	mw.veForAll.Editor.prototype.init = function ( content ) {
-		// ve.createDocumentFromHtml documents support for an empty string
-		// to create an empty document, but does not mention other falsy values.
-		content = content || '';
-
-		// this.target = ve.init.mw.targetFactory.create( 'pageForms' );
 		this.target = this.createTarget();
 
 		$.each( this.initCallbacks, $.proxy( function ( k, callback ) {

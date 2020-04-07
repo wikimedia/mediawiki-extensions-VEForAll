@@ -241,14 +241,13 @@
 	mw.veForAll.Target.prototype.convertToHtml = function ( content, callback ) {
 		var target = this,
 			oldFormat = 'wikitext',
-			newFormat = 'html',
-			apiCall;
+			newFormat = 'html';
 
 		$( this.$node )
 			.prop( 'disabled', true )
 			.addClass( 'oo-ui-texture-pending' );
 
-		apiCall = new mw.Api().post( {
+		new mw.Api().post( {
 			action: 'veforall-parsoid-utils',
 			from: oldFormat,
 			to: newFormat,

@@ -272,6 +272,11 @@
 		var textarea = this.$node,
 			target = this;
 
+		// Needed for MW <= 1.31 (?)
+		if ( this.surface === null ) {
+			return;
+		}
+
 		if ( $( textarea ).is( ':visible' ) ) {
 			// Switch to VE editor
 
@@ -289,7 +294,11 @@
 			$( textarea ).parent().find( '.oo-ui-tool-link' )
 				.attr( 'title', OO.ui.deferMsg( 'veforall-switch-editor-tool-title' ) );
 
-			this.setDir();
+			// Check is needed for MW <= 1.31 (?)
+			if ( this.surface !== null ) {
+				this.setDir();
+			}
+
 		} else {
 			// Switch to markup editor
 

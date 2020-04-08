@@ -56,7 +56,7 @@
 	mw.veForAll.Editor.prototype.initCallbacks = [];
 
 	mw.veForAll.Editor.prototype.createTarget = function () {
-		var self = this;
+		var self = this, wrapperNode, maxHeight;
 
 		if ( $( this.$node ).hasClass( 'toolbarOnTop' ) ) {
 			this.target = new mw.veForAll.Targetwide( this.$node, $( this.$node ).val() );
@@ -79,6 +79,14 @@
 				self.$node.trigger( 'change' );
 			} );
 		} );
+
+		// Set max height of the textarea, if it was specified.
+		wrapperNode = self.$node.parent( '.ve-area-wrapper' );
+		maxHeight = wrapperNode.attr( 'data-max-height' );
+		if ( maxHeight !== undefined ) {
+			wrapperNode.find( '.ve-ce-documentNode' ).css( 'max-height', maxHeight )
+				.css( 'overflow-y', 'auto' );
+		}
 
 		mw.hook( 'veForAll.targetCreated' ).fire( this );
 

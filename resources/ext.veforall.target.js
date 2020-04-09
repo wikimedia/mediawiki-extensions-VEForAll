@@ -195,11 +195,28 @@
 		}
 	};
 
+	mw.veForAll.Target.prototype.escapePipesInTables = function ( text ) {
+		var lines = text.split( '\n' ), i, curLine;
+		for ( i = 0; i < lines.length; i++ ) {
+			curLine = lines[ i ];
+			if ( curLine.indexOf( '{|' ) === 0 ) {
+				lines[ i ] = curLine.replace( '{|', '{{{!}}' );
+			} else if ( curLine.indexOf( '||' ) === 0 ) {
+				lines[ i ] = curLine.replace( '||', '{{!}}{{!}}' );
+			} else if ( curLine.indexOf( '|' ) === 0 ) {
+				// This also covers '|}'
+				lines[ i ] = curLine.replace( '|', '{{!}}' );
+			}
+		}
+		return lines.join( '\n' );
+	};
+
 	mw.veForAll.Target.prototype.convertToWikiText = function ( content ) {
 		var target = this,
 			oldFormat = 'html',
 			newFormat = 'wikitext',
-			apiCall;
+			apiCall,
+			wikitextVal;
 
 		$( this.$node )
 			.prop( 'disabled', true )
@@ -214,7 +231,14 @@
 			content: content,
 			title: this.getPageName()
 		} ).then( function ( data ) {
-			$( target.$node ).val( data[ 'veforall-parsoid-utils' ].content );
+			wikitextVal = data[ 'veforall-parsoid-utils' ].content;
+			// Template fields can't contain wikitext tables - it
+			// will confuse the parser - so if we're editing a
+			// template field, replace every | with {{!}}.
+			if ( target.$node.hasClass( 'vePartOfTemplate' ) ) {
+				wikitextVal = target.escapePipesInTables( wikitextVal );
+			}
+			$( target.$node ).val( wikitextVal );
 			$( target.$node ).change();
 
 			$( target.$node )

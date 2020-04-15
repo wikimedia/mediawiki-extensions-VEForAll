@@ -196,16 +196,24 @@
 	};
 
 	mw.veForAll.Target.prototype.escapePipesInTables = function ( text ) {
-		var lines = text.split( '\n' ), i, curLine;
+		var lines = text.split( '\n' ), i, curLine, withinTable = false;
+
+		// This algorithm will hopefully work for all cases except
+		// when there are template calls within the table, and those
+		// template calls include a pipe at the beginning of a line.
+		// That is hopefully a rare case (a template call within a
+		// table within a template call) that hopefully does not
+		// justify creating more complex handling.
 		for ( i = 0; i < lines.length; i++ ) {
 			curLine = lines[ i ];
 			if ( curLine.indexOf( '{|' ) === 0 ) {
-				lines[ i ] = curLine.replace( '{|', '{{{!}}' );
-			} else if ( curLine.indexOf( '||' ) === 0 ) {
-				lines[ i ] = curLine.replace( '||', '{{!}}{{!}}' );
-			} else if ( curLine.indexOf( '|' ) === 0 ) {
-				// This also covers '|}'
-				lines[ i ] = curLine.replace( '|', '{{!}}' );
+				withinTable = true;
+				lines[ i ] = curLine.replace( /\|/g, '{{!}}' );
+			} else if ( withinTable && curLine.indexOf( '|' ) === 0 ) {
+				lines[ i ] = curLine.replace( /\|/g, '{{!}}' );
+			}
+			if ( curLine.indexOf( '|}' ) === 0 ) {
+				withinTable = false;
 			}
 		}
 		return lines.join( '\n' );

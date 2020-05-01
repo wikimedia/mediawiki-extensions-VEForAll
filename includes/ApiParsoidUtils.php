@@ -5,6 +5,7 @@ namespace VEForAll;
 use ApiBase;
 use ApiMessage;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
 use MultiHttpClient;
 use ParserOptions;
 use ParsoidVirtualRESTService;
@@ -166,10 +167,10 @@ class ApiParsoidUtils extends ApiBase {
 	 * @return string Returns the parsed string
 	 */
 	private function parser( $content, Title $title ) {
-		global $wgParser;
+		$parser = MediaWikiServices::getInstance()->getParser();
 		$options = new ParserOptions( $this->getUser() );
 		$options->setTidy( true );
-		$output = $wgParser->parse( $content, $title, $options );
+		$output = $parser->parse( $content, $title, $options );
 		return $output->getText( [ 'enableSectionEditLinks' => false ] );
 	}
 

@@ -159,6 +159,7 @@
 		// show or hide toolbar when lose focus
 		this.getSurface().getView().on( 'focus', function () {
 			target.updateToolbarVisibility();
+			target.$node.addClass( 've-for-all-waiting-for-update' );
 		} );
 		target.updateToolbarVisibility();
 		this.setDir();
@@ -184,7 +185,9 @@
 	 */
 	mw.veForAll.Target.prototype.updateContent = function () {
 		var surface = this.getSurface();
-		if ( surface !== null && !$( this.$node ).is( ':visible' ) ) {
+		if ( surface !== null &&
+			!$( this.$node ).is( ':visible' ) &&
+			this.$node.is( '.ve-for-all-waiting-for-update' ) ) {
 			return this.convertToWikiText( surface.getHtml() );
 		}
 	};
@@ -258,7 +261,7 @@
 
 			$( target.$node )
 				.prop( 'disabled', false )
-				.removeClass( 'oo-ui-texture-pending' );
+				.removeClass( 'oo-ui-texture-pending ve-for-all-waiting-for-update' );
 
 			$( target.$element ).removeClass( 'oo-ui-texture-pending' );
 

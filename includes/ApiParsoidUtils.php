@@ -6,7 +6,6 @@ use ApiBase;
 use ApiMessage;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
-use MultiHttpClient;
 use ParserOptions;
 use ParsoidVirtualRESTService;
 use RequestContext;
@@ -116,7 +115,8 @@ class ApiParsoidUtils extends ApiBase {
 		$vrsObject ) {
 		global $wgVersion;
 
-		$serviceClient = new VirtualRESTServiceClient( new MultiHttpClient( [] ) );
+		$serviceClient = new VirtualRESTServiceClient(
+			MediaWikiServices::getInstance()->getHttpRequestFactory()->createMultiClient() );
 		$serviceClient->mount( '/restbase/', $vrsObject );
 
 		$prefixedDbTitle = $title->getPrefixedDBkey();

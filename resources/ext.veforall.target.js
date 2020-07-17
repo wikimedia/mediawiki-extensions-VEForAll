@@ -14,6 +14,8 @@
 	/**
 	 * Inherits from the standard VE target.
 	 *
+	 * @param node
+	 * @param content
 	 * @class
 	 * @extends ve.init.sa.Target
 	 */

@@ -9,6 +9,8 @@
 	/**
 	 * Inherits from the stand-alone target.
 	 *
+	 * @param node
+	 * @param content
 	 * @class
 	 * @extends ve.init.sa.Target
 	 */

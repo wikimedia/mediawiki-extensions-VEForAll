@@ -182,14 +182,14 @@
 	/**
 	 * Type of content to use
 	 *
-	 * @var {string}
+	 * @member {string}
 	 */
 	mw.veForAll.Editor.static.format = 'html';
 
 	/**
 	 * Name of this editor
 	 *
-	 * @var string
+	 * @member string
 	 */
 	mw.veForAll.Editor.static.name = 'visualeditor';
 

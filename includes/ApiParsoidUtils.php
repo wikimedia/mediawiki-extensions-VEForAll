@@ -169,7 +169,6 @@ class ApiParsoidUtils extends ApiBase {
 	private function parser( $content, Title $title ) {
 		$parser = MediaWikiServices::getInstance()->getParser();
 		$options = new ParserOptions( $this->getUser() );
-		$options->setTidy( true );
 		$output = $parser->parse( $content, $title, $options );
 		return $output->getText( [ 'enableSectionEditLinks' => false ] );
 	}

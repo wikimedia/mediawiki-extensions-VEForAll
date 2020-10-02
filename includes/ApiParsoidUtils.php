@@ -10,7 +10,6 @@ use ParserOptions;
 use ParsoidVirtualRESTService;
 use RequestContext;
 use Title;
-use User;
 use VirtualRESTServiceClient;
 
 /**
@@ -196,7 +195,11 @@ class ApiParsoidUtils extends ApiBase {
 			$params = array_merge( $wgVirtualRestConfig['global'], $params );
 		}
 		// set up cookie forwarding
-		if ( $params['forwardCookies'] && !User::isEveryoneAllowed( 'read' ) ) {
+		if ( $params['forwardCookies'] &&
+			!MediaWikiServices::getInstance()
+				->getPermissionManager()
+				->isEveryoneAllowed( 'read' )
+		) {
 			$params['forwardCookies'] =
 				RequestContext::getMain()->getRequest()->getHeader( 'Cookie' );
 		} else {

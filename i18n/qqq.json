@@ -19,5 +19,6 @@
 	"apihelp-veforall-parsoid-utils-example-1": "{{doc-apihelp-example|veforall-parsoid-utils}}",
 	"veforall-api-error-unsupported-conversion": "Error message",
 	"veforall-api-error-unsupported-parser-conversion": "Error message",
-	"veforall-api-error-parsoid-error": "Error message"
+	"veforall-api-error-parsoid-error": "Error message",
+	"veforall-form-instances-not-minimized": "A warning message"
 }

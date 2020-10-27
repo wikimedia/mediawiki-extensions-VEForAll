@@ -1,8 +1,9 @@
 /*
  * VEForAll initialization
  *
- * @author Pierre Boutet, Clement Flipo
- * @copyright Copyright © 2016-2017, Wikifab
+ * @author Pierre Boutet
+ * @author Clement Flipo
+ * @author Yaron Koren
  */
 
 /* globals jQuery, mw, ve */
@@ -73,5 +74,32 @@
 	} else {
 		initVisualEditor();
 	}
+
+	// This hook was added in Page Forms 5.0.
+	mw.hook( 'pf.formValidation' ).add( function ( args ) {
+		var hasMinimizedPlainVETextarea = false;
+		$( '.minimized' ).each( function () {
+			var instanceDiv = $( this );
+			instanceDiv.find( 'textarea.vePartOfTemplate' ).each( function () {
+				if ( $( this ).css( 'display' ) !== 'none' ) {
+					instanceDiv.removeClass( 'minimized' );
+					instanceDiv.find( '.fieldValuesDisplay' ).html( '' );
+					instanceDiv.find( '.instanceMain' ).fadeIn();
+					instanceDiv.find( '.fieldValuesDisplay' ).remove();
+					hasMinimizedPlainVETextarea = true;
+				}
+			} );
+		} );
+		if ( hasMinimizedPlainVETextarea ) {
+			args.numErrors += 1;
+			// Only add this error message if it's not already there.
+			if ( $( '#veforall_form_error_header' ).size() === 0 ) {
+				$( '#contentSub' ).append( '<div id="veforall_form_error_header" class="errorbox" style="font-size: medium"><img src="' +
+					mw.config.get( 'wgPageFormsScriptPath' ) + '/skins/MW-Icon-AlertMark.png" />&nbsp;' +
+					mw.message( 'veforall-form-instances-not-minimized' ).escaped() + '</div><br clear="both" />' );
+			}
+		}
+
+	} );
 
 }( jQuery, mw ) );

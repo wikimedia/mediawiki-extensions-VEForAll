@@ -41,7 +41,8 @@
 			],
 			"messages": [
 				"visualeditor-welcomedialog-switch-ve",
-				"veforall-switch-editor-tool-title"
+				"veforall-switch-editor-tool-title",
+				"veforall-form-instances-not-minimized"
 			],
 			"dependencies": [
 				"ext.veforall.core",

@@ -13,5 +13,6 @@
 	"apihelp-veforall-parsoid-utils-example-1": "convert ''blah'' from wikitext to html",
 	"veforall-api-error-unsupported-conversion": "Conversion from '$1' to '$2' is not supported.",
 	"veforall-api-error-unsupported-parser-conversion": "Conversion from '$1' to '$2' is not supported by the core parser.",
-	"veforall-api-error-parsoid-error": "Request to $1 for $2 to $3 conversion of content connected to title $4 failed: $5"
+	"veforall-api-error-parsoid-error": "Request to $1 for $2 to $3 conversion of content connected to title $4 failed: $5",
+	"veforall-form-instances-not-minimized": "Due to limitations in the software, some collapsed boxes had to be expanded before this form could be submitted. Please re-submit the form now."
 }

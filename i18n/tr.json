@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
-			"Hedda"
+			"Hedda",
+			"MuratTheTurkish"
 		]
 	},
 	"veforall-desc": "GörselEditör'e eklemek için uzantı kütüphanesi",
@@ -16,5 +17,6 @@
 	"apihelp-veforall-parsoid-utils-example-1": "''blah'' vikimetin den html ye çevir",
 	"veforall-api-error-unsupported-conversion": "'$1' ile '$2' dönüşüm desteklenmiyor.",
 	"veforall-api-error-unsupported-parser-conversion": "'$1' ile '$2' dönüşüm çekirdek ayrıştırıcı tarafından desteklenmiyor.",
-	"veforall-api-error-parsoid-error": "$4 başlığına bağlı içeriğin $2 ile $3 dönüşümü için $1 isteyin: $5"
+	"veforall-api-error-parsoid-error": "$4 başlığına bağlı içeriğin $2 ile $3 dönüşümü için $1 isteyin: $5",
+	"veforall-form-instances-not-minimized": "Yazılımdaki sınırlamalar nedeniyle, bu form gönderilmeden önce bazı daraltılmış kutuların genişletilmesi gerekiyordu. Lütfen formu şimdi yeniden gönderin."
 }

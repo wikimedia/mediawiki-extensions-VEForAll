@@ -15,5 +15,6 @@
 	"apihelp-veforall-parsoid-utils-example-1": "претвори го ''бла'' од викитекст во HTML",
 	"veforall-api-error-unsupported-conversion": "Претворањето од „$1“ во „$2“ не е поддржано.",
 	"veforall-api-error-unsupported-parser-conversion": "Претворањето од „$1“ во „$2“ не е поддржано од јадрениот расчленувач.",
-	"veforall-api-error-parsoid-error": "Не успеа барањето кон $1 за претворање на $2 во $3 на содржината поврзана со насловот „$4“: $5"
+	"veforall-api-error-parsoid-error": "Не успеа барањето кон $1 за претворање на $2 во $3 на содржината поврзана со насловот „$4“: $5",
+	"veforall-form-instances-not-minimized": "Поради ограничувањата на програмата, некои склопени кутии требаа да се раслопат пред да може да се поднесе образецов. Сега поднесете го."
 }

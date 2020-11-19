@@ -15,5 +15,6 @@
 	"apihelp-veforall-parsoid-utils-example-1": "converte \"blah\" da uicchitest jndr'à html",
 	"veforall-api-error-unsupported-conversion": "'A conversione da '$1' a '$2' non g'è supportate.",
 	"veforall-api-error-unsupported-parser-conversion": "'A conversione da '$1' a '$2' non g'è supportate da l'analizzatore prengepàle.",
-	"veforall-api-error-parsoid-error": "Cirche $1 pe $2 sus a $3, conversione d'u condenute collegate a 'u titole $4 fallite: $5"
+	"veforall-api-error-parsoid-error": "Cirche $1 pe $2 sus a $3, conversione d'u condenute collegate a 'u titole $4 fallite: $5",
+	"veforall-form-instances-not-minimized": "Pe colpe de le limitaziune d'u softuer, ha state necessarie spannere de le caselle combresse apprime de putè mannà stu module. Pe piacere mò mannale arrete."
 }

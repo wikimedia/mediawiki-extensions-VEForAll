@@ -15,5 +15,6 @@
 	"apihelp-veforall-parsoid-utils-example-1": "將 wiki 文字中的 ''blah'' 轉換成 html",
 	"veforall-api-error-unsupported-conversion": "不支援將「$1」轉換成「$2」。",
 	"veforall-api-error-unsupported-parser-conversion": "核心解析不支援將「$1」轉換成「$2」。",
-	"veforall-api-error-parsoid-error": "請求 $1 將關聯至標題 $4 內容進行把 $2 轉換成 $3 失敗：$5"
+	"veforall-api-error-parsoid-error": "請求 $1 將關聯至標題 $4 內容進行把 $2 轉換成 $3 失敗：$5",
+	"veforall-form-instances-not-minimized": "由於軟體的限制，必須先展開一些折疊框，然後才能提交此表單。請現在重新提交表單。"
 }

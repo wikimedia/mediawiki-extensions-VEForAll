@@ -2,6 +2,7 @@
 
 namespace VEForAll;
 
+use ApiParsoidTrait;
 use FatalError;
 use Hooks;
 use MWException;
@@ -10,6 +11,18 @@ use ResourceLoader;
 use Skin;
 
 class VEForAllHooks {
+
+	public static function registerClasses() {
+		global $wgAutoloadClasses, $wgAPIModules;
+		if ( class_exists( ApiParsoidTrait::class ) ) {
+			// MW 1.35+
+			$wgAutoloadClasses['VEForAll\\ApiParsoidUtils'] = __DIR__ . '/ApiParsoidUtils.php';
+			$wgAPIModules['veforall-parsoid-utils'] = 'VEForAll\\ApiParsoidUtils';
+		} else {
+			$wgAutoloadClasses['VEForAll\\ApiParsoidUtilsOld'] = __DIR__ . '/ApiParsoidUtilsOld.php';
+			$wgAPIModules['veforall-parsoid-utils'] = 'VEForAll\\ApiParsoidUtilsOld';
+		}
+	}
 
 	private static $defaultConfig = [
 		'normal' => [

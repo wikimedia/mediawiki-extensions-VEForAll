@@ -14,8 +14,8 @@
 			"VisualEditor": "*"
 		}
 	},
+	"callback": "VEForAll\\VEForAllHooks::registerClasses",
 	"AutoloadClasses": {
-		"VEForAll\\ApiParsoidUtils": "includes/ApiParsoidUtils.php",
 		"VEForAll\\VEForAllHooks": "includes/VEForAllHooks.php"
 	},
 	"Hooks": {
@@ -27,9 +27,6 @@
 		"VEForAll": [
 			"i18n"
 		]
-	},
-	"APIModules": {
-		"veforall-parsoid-utils": "VEForAll\\ApiParsoidUtils"
 	},
 	"ResourceModules": {
 		"ext.veforall.main": {

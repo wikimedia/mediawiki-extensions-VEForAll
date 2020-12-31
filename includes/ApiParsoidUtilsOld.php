@@ -4,11 +4,11 @@ namespace VEForAll;
 
 use ApiBase;
 use ApiMessage;
-use ApiParsoidTrait;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use ParserOptions;
 use ParsoidVirtualRESTService;
+use RequestContext;
 use Title;
 use VirtualRESTServiceClient;
 
@@ -16,8 +16,7 @@ use VirtualRESTServiceClient;
  * Heavily based on the ApiParsoidUtils and Utils classes from the
  * StructuredDiscussions extension.
  */
-class ApiParsoidUtils extends ApiBase {
-	use ApiParsoidTrait;
+class ApiParsoidUtilsOld extends ApiBase {
 
 	public function execute() {
 		$params = $this->extractRequestParams();
@@ -171,6 +170,43 @@ class ApiParsoidUtils extends ApiBase {
 		$options = new ParserOptions( $this->getUser() );
 		$output = $parser->parse( $content, $title, $options );
 		return $output->getText( [ 'enableSectionEditLinks' => false ] );
+	}
+
+	/**
+	 * Create the Parsoid Virtual REST Service object to be used in API calls.
+	 * @return ParsoidVirtualRESTService|null
+	 */
+	private function getVRSObject() {
+		global $wgVirtualRestConfig;
+
+		// the params array to create the service object with
+		$params = [];
+		// the global virtual rest service config object, if any
+		if ( isset( $wgVirtualRestConfig['modules'] ) &&
+			isset( $wgVirtualRestConfig['modules']['parsoid'] ) ) {
+			// there's a global parsoid config, use it next
+			$params = $wgVirtualRestConfig['modules']['parsoid'];
+			$params['restbaseCompat'] = true;
+		} else {
+			return null;
+		}
+		// merge the global and service-specific params
+		if ( isset( $wgVirtualRestConfig['global'] ) ) {
+			$params = array_merge( $wgVirtualRestConfig['global'], $params );
+		}
+		// set up cookie forwarding
+		if ( $params['forwardCookies'] &&
+			!MediaWikiServices::getInstance()
+				->getPermissionManager()
+				->isEveryoneAllowed( 'read' )
+		) {
+			$params['forwardCookies'] =
+				RequestContext::getMain()->getRequest()->getHeader( 'Cookie' );
+		} else {
+			$params['forwardCookies'] = false;
+		}
+		// create the VRS object
+		return new ParsoidVirtualRESTService( $params );
 	}
 
 	/**

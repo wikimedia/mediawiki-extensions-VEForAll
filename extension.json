@@ -20,7 +20,7 @@
 	},
 	"Hooks": {
 		"BeforePageDisplay": "VEForAll\\VEForAllHooks::onBeforePageDisplay",
-		"MakeGlobalVariablesScript":  "VEForAll\\VEForAllHooks::onMakeGlobalVariablesScript",
+		"MakeGlobalVariablesScript": "VEForAll\\VEForAllHooks::onMakeGlobalVariablesScript",
 		"ResourceLoaderRegisterModules": "VEForAll\\VEForAllHooks::onResourceLoaderRegisterModules"
 	},
 	"MessagesDirs": {

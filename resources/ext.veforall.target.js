@@ -249,7 +249,7 @@
 				wikitextVal = target.escapePipesInTables( wikitextVal );
 			}
 			$( target.$node ).val( wikitextVal );
-			$( target.$node ).change();
+			$( target.$node ).trigger( 'change' );
 
 			$( target.$node )
 				.prop( 'disabled', false )
@@ -345,7 +345,7 @@
 
 			this.updateContent().then( function () {
 				$( target.getSurface().$element ).hide();
-				$( textarea ).show().focus();
+				$( textarea ).show().trigger( 'focus' );
 			} );
 		}
 	};

@@ -93,7 +93,7 @@
 		if ( hasMinimizedPlainVETextarea ) {
 			args.numErrors += 1;
 			// Only add this error message if it's not already there.
-			if ( $( '#veforall_form_error_header' ).size() === 0 ) {
+			if ( $( '#veforall_form_error_header' ).length === 0 ) {
 				$( '#contentSub' ).append( '<div id="veforall_form_error_header" class="errorbox" style="font-size: medium"><img src="' +
 					mw.config.get( 'wgPageFormsScriptPath' ) + '/skins/MW-Icon-AlertMark.png" />&nbsp;' +
 					mw.message( 'veforall-form-instances-not-minimized' ).escaped() + '</div><br clear="both" />' );

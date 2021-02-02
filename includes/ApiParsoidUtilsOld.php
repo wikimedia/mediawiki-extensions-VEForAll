@@ -15,6 +15,8 @@ use VirtualRESTServiceClient;
 /**
  * Heavily based on the ApiParsoidUtils and Utils classes from the
  * StructuredDiscussions extension.
+ *
+ * This class is used for MediaWiki versions 1.34 and lower.
  */
 class ApiParsoidUtilsOld extends ApiBase {
 
@@ -168,6 +170,7 @@ class ApiParsoidUtilsOld extends ApiBase {
 	private function parser( $content, Title $title ) {
 		$parser = MediaWikiServices::getInstance()->getParser();
 		$options = new ParserOptions( $this->getUser() );
+		$options->setTidy( true );
 		$output = $parser->parse( $content, $title, $options );
 		return $output->getText( [ 'enableSectionEditLinks' => false ] );
 	}

@@ -45,7 +45,7 @@
 		modules = mw.config.get( 'wgVisualEditorConfig' ).pluginModules.filter( mw.loader.getState );
 
 		// load dependencies & init editor
-		mw.loader.using( modules, $.proxy( this.init, this, content || '' ) );
+		mw.loader.using( modules, this.init.bind( this, content || '' ) );
 	};
 
 	OO.mixinClass( mw.veForAll.Editor, OO.EventEmitter );
@@ -101,9 +101,9 @@
 	mw.veForAll.Editor.prototype.init = function ( content ) {
 		this.target = this.createTarget();
 
-		$.each( this.initCallbacks, $.proxy( function ( k, callback ) {
+		$.each( this.initCallbacks, function ( k, callback ) {
 			callback.apply( this );
-		}, this ) );
+		}.bind( this ) );
 	};
 
 	mw.veForAll.Editor.prototype.destroy = function () {

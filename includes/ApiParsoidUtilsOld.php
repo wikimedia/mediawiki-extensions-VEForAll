@@ -180,7 +180,7 @@ class ApiParsoidUtilsOld extends ApiBase {
 	 * @return ParsoidVirtualRESTService|null
 	 */
 	private function getVRSObject() {
-		global $wgVirtualRestConfig;
+		global $wgVirtualRestConfig, $wgVisualEditorParsoidAutoConfig;
 
 		// the params array to create the service object with
 		$params = [];
@@ -190,6 +190,12 @@ class ApiParsoidUtilsOld extends ApiBase {
 			// there's a global parsoid config, use it next
 			$params = $wgVirtualRestConfig['modules']['parsoid'];
 			$params['restbaseCompat'] = true;
+		} elseif ( $wgVisualEditorParsoidAutoConfig ) {
+			$params = $wgVirtualRestConfig['modules']['parsoid'] ?? [];
+			$params['restbaseCompat'] = true;
+			// forward cookies on private wikis
+			$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
+			$params['forwardCookies'] = !$permissionManager->isEveryoneAllowed( 'read' );
 		} else {
 			return null;
 		}

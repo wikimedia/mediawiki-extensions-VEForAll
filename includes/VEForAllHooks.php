@@ -15,7 +15,7 @@ class VEForAllHooks {
 	public static function registerClasses() {
 		global $wgAutoloadClasses, $wgAPIModules;
 		if ( class_exists( ApiParsoidTrait::class ) ) {
-			// MW 1.35+
+			// MW 1.35.? +
 			$wgAutoloadClasses['VEForAll\\ApiParsoidUtils'] = __DIR__ . '/ApiParsoidUtils.php';
 			$wgAPIModules['veforall-parsoid-utils'] = 'VEForAll\\ApiParsoidUtils';
 		} else {

@@ -208,7 +208,8 @@
 		// justify creating more complex handling.
 		for ( i = 0; i < lines.length; i++ ) {
 			curLine = lines[ i ];
-			if ( curLine.indexOf( '{|' ) === 0 ) {
+			// start of table is {|, but could be also escaped, like this: {{{!}}
+			if ( curLine.indexOf( '{|' ) === 0 || curLine.indexOf( '{{{!}}' ) === 0 ) {
 				withinTable = true;
 				lines[ i ] = curLine.replace( /\|/g, '{{!}}' );
 			} else if ( withinTable && curLine.indexOf( '|' ) === 0 ) {

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"DDPAT",
 			"Piramidion"
 		]
 	},
@@ -15,5 +16,6 @@
 	"apihelp-veforall-parsoid-utils-example-1": "конвертувати ''blah'' з вікірозмітки в html",
 	"veforall-api-error-unsupported-conversion": "Конвертування з «$1» у «$2» не підтримується.",
 	"veforall-api-error-unsupported-parser-conversion": "Конвертування з «$1» у «$2» не підтримується ядром парсера.",
-	"veforall-api-error-parsoid-error": "Запит $1 щодо конвертування вмісту, пов'язаного з назвою $4, з $2 у $3, завершився невдачею: $5"
+	"veforall-api-error-parsoid-error": "Запит $1 щодо конвертування вмісту, пов'язаного з назвою $4, з $2 у $3, завершився невдачею: $5",
+	"veforall-form-instances-not-minimized": "Через обмеження в програмному забезпеченні, перш ніж цю форму можна було надіслати, деякі згорнуті ящики довелося розширити. Будь ласка, надішліть форму знову зараз."
 }

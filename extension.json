@@ -9,7 +9,7 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "other",
 	"requires": {
-		"MediaWiki": ">= 1.29.0",
+		"MediaWiki": ">= 1.32.0",
 		"extensions": {
 			"VisualEditor": "*"
 		}
@@ -20,8 +20,7 @@
 	},
 	"Hooks": {
 		"BeforePageDisplay": "VEForAll\\VEForAllHooks::onBeforePageDisplay",
-		"MakeGlobalVariablesScript": "VEForAll\\VEForAllHooks::onMakeGlobalVariablesScript",
-		"ResourceLoaderRegisterModules": "VEForAll\\VEForAllHooks::onResourceLoaderRegisterModules"
+		"MakeGlobalVariablesScript": "VEForAll\\VEForAllHooks::onMakeGlobalVariablesScript"
 	},
 	"MessagesDirs": {
 		"VEForAll": [
@@ -29,6 +28,29 @@
 		]
 	},
 	"ResourceModules": {
+		"ext.veforall.core": {
+			"scripts": [
+				"resources/ui/ui.CommandRegistry.js",
+				"resources/ui/ui.SwitchEditorAction.js",
+				"resources/ui/ui.SwitchEditorTool.js",
+				"resources/ext.veforall.target.js",
+				"resources/ext.veforall.targetwide.js",
+				"resources/ext.veforall.editor.js"
+			],
+			"dependencies": [
+				"ext.visualEditor.core",
+				"ext.visualEditor.core.desktop",
+				"ext.visualEditor.data",
+				"ext.visualEditor.icons",
+				"ext.visualEditor.mediawiki",
+				"ext.visualEditor.desktopTarget",
+				"ext.visualEditor.mwextensions.desktop",
+				"ext.visualEditor.mwimage",
+				"ext.visualEditor.mwlink",
+				"ext.visualEditor.mwtransclusion",
+				"oojs-ui.styles.icons-editing-advanced"
+			]
+		},
 		"ext.veforall.main": {
 			"scripts": [
 				"resources/VEForAll.js"

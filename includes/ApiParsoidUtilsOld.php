@@ -4,6 +4,7 @@ namespace VEForAll;
 
 use ApiBase;
 use ApiMessage;
+use Http;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use ParserOptions;
@@ -116,8 +117,9 @@ class ApiParsoidUtilsOld extends ApiBase {
 		$vrsObject ) {
 		global $wgVersion;
 
-		$serviceClient = new VirtualRESTServiceClient(
-			MediaWikiServices::getInstance()->getHttpRequestFactory()->createMultiClient() );
+		// createMultiClient() is deprecated in 1.34, but this class (ApiParsoidUtilsOld) is not
+		// used after 1.34.
+		$serviceClient = new VirtualRESTServiceClient( Http::createMultiClient() );
 		$serviceClient->mount( '/restbase/', $vrsObject );
 
 		$prefixedDbTitle = $title->getPrefixedDBkey();

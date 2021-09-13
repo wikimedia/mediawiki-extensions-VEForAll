@@ -1,18 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Tranve"
 		]
 	},
 	"veforall-desc": "用于将扩展添加到可视化编辑器的库",
-	"veforall-switch-editor-tool-title": "切换为wiki文本编辑器",
-	"apihelp-veforall-parsoid-utils-summary": "反复将文本从Wiki文本转换为HTML",
+	"veforall-switch-editor-tool-title": "切换为wikitext编辑器",
+	"apihelp-veforall-parsoid-utils-summary": "反复将文本从Wikitext转换为HTML",
 	"apihelp-veforall-parsoid-utils-param-from": "“html”或“wikitext”",
 	"apihelp-veforall-parsoid-utils-param-to": "“html”或“wikitext”",
 	"apihelp-veforall-parsoid-utils-param-content": "要转换的内容",
 	"apihelp-veforall-parsoid-utils-param-title": "存放内容的页面的标题",
 	"apihelp-veforall-parsoid-utils-param-pageid": "存放内容的页面的页面ID",
-	"apihelp-veforall-parsoid-utils-example-1": "将“blah”从wiki文本转换为html",
+	"apihelp-veforall-parsoid-utils-example-1": "将“blah”从wikitext转换为html",
 	"veforall-api-error-unsupported-conversion": "不支持从“$1”到“$2”的转换。",
 	"veforall-api-error-unsupported-parser-conversion": "核心解析器不支持从“$1”到“$2”的转换。",
 	"veforall-api-error-parsoid-error": "请求$1用于将连接到标题$4内容从$2转换为$3失败：$5"

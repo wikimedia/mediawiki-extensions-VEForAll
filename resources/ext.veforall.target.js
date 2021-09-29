@@ -215,6 +215,10 @@
 			} else if ( withinTable && curLine.indexOf( '|' ) === 0 ) {
 				lines[ i ] = curLine.replace( /\|/g, '{{!}}' );
 			}
+			// Table caption case (`|+`). See https://www.mediawiki.org/wiki/Help:Tables
+			if ( withinTable && curLine.indexOf( '|+' ) > -1 ) {
+				lines[ i ] = curLine.replace( /\|\+/g, '{{!}}+' );
+			}
 			if ( curLine.indexOf( '|}' ) === 0 ) {
 				withinTable = false;
 			}

@@ -33,6 +33,9 @@ class ApiParsoidUtilsOld extends ApiBase {
 		$this->getResult()->addValue( null, $this->getModuleName(), $result );
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	public function getAllowedParams() {
 		return [
 			'from' => [
@@ -182,6 +185,7 @@ class ApiParsoidUtilsOld extends ApiBase {
 	 * @return ParsoidVirtualRESTService|null
 	 */
 	private function getVRSObject() {
+		// phpcs:ignore MediaWiki.Usage.ExtendClassUsage.FunctionConfigUsage
 		global $wgVirtualRestConfig, $wgVisualEditorParsoidAutoConfig;
 
 		// the params array to create the service object with
@@ -226,6 +230,7 @@ class ApiParsoidUtilsOld extends ApiBase {
 	 * @param params $params parameters to the custom message
 	 */
 	private function dieCustomUsageMessage( $message_name, $params = [] ) {
+		// phpcs:ignore MediaWiki.Usage.ExtendClassUsage.FunctionVarUsage
 		$errorMessage = wfMessage( $message_name, $params );
 		LoggerFactory::getInstance( 'VEForAll' )->error( $errorMessage );
 		$this->dieWithError(

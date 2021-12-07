@@ -23,6 +23,7 @@ class VEForAllHooks {
 		}
 	}
 
+	/** @var array[] */
 	private static $defaultConfig = [
 		'normal' => [
 			[

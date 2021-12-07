@@ -31,6 +31,9 @@ class ApiParsoidUtils extends ApiBase {
 		$this->getResult()->addValue( null, $this->getModuleName(), $result );
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	public function getAllowedParams() {
 		return [
 			'from' => [
@@ -179,6 +182,7 @@ class ApiParsoidUtils extends ApiBase {
 	 * @param params $params parameters to the custom message
 	 */
 	private function dieCustomUsageMessage( $message_name, $params = [] ) {
+		// phpcs:ignore MediaWiki.Usage.ExtendClassUsage.FunctionVarUsage
 		$errorMessage = wfMessage( $message_name, $params );
 		LoggerFactory::getInstance( 'VEForAll' )->error( $errorMessage );
 		$this->dieWithError(

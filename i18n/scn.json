@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ajeje Brazorf"
+		]
+	},
+	"apihelp-veforall-parsoid-utils-param-from": "'html' o 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-to": "'html' o 'wikitext'"
+}

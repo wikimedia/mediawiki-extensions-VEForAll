@@ -1,18 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kly"
+			"Kly",
+			"Tranve"
 		]
 	},
 	"veforall-desc": "用於添加視覺化編輯器擴充功能的函示庫",
-	"veforall-switch-editor-tool-title": "切換至 wiki 文字編輯器",
-	"apihelp-veforall-parsoid-utils-summary": "反覆將 wiki 文字中的內容轉換成 html",
-	"apihelp-veforall-parsoid-utils-param-from": "「html」或「wiki 文字」",
-	"apihelp-veforall-parsoid-utils-param-to": "「html」或「wiki 文字」",
+	"veforall-switch-editor-tool-title": "切換至 wikitext 編輯器",
+	"apihelp-veforall-parsoid-utils-summary": "反覆將 wikitext 中的內容轉換成 html",
+	"apihelp-veforall-parsoid-utils-param-from": "「html」或「wikitext」",
+	"apihelp-veforall-parsoid-utils-param-to": "「html」或「wikitext」",
 	"apihelp-veforall-parsoid-utils-param-content": "要轉換的內容",
 	"apihelp-veforall-parsoid-utils-param-title": "含有內容頁面的標題",
 	"apihelp-veforall-parsoid-utils-param-pageid": "含有內容頁面的頁面 ID",
-	"apihelp-veforall-parsoid-utils-example-1": "將 wiki 文字中的 ''blah'' 轉換成 html",
+	"apihelp-veforall-parsoid-utils-example-1": "將 wikitext 中的 ''blah'' 轉換成 html",
 	"veforall-api-error-unsupported-conversion": "不支援將「$1」轉換成「$2」。",
 	"veforall-api-error-unsupported-parser-conversion": "核心解析不支援將「$1」轉換成「$2」。",
 	"veforall-api-error-parsoid-error": "請求 $1 將關聯至標題 $4 內容進行把 $2 轉換成 $3 失敗：$5"

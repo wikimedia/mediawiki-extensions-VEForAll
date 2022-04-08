@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
+			"Verdy p",
 			"Wladek92"
 		]
 	},
 	"veforall-desc": "Une bibliothèque pour que les extensions ajoutent VisualEditor",
-	"veforall-switch-editor-tool-title": "Basculer vers l’éditeur wikitexte",
+	"veforall-switch-editor-tool-title": "Basculer vers l’éditeur de wikicode",
 	"apihelp-veforall-parsoid-utils-summary": "Convertir dans les deux sens, de Wikitext en HTML",
 	"apihelp-veforall-parsoid-utils-param-from": "'html' ou 'wikitext'",
 	"apihelp-veforall-parsoid-utils-param-to": "'html' ou 'wikitext'",

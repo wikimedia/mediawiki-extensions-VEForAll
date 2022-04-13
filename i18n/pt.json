@@ -6,7 +6,7 @@
 		]
 	},
 	"veforall-desc": "Uma biblioteca para as extensões adicionarem o VisualEditor",
-	"veforall-switch-editor-tool-title": "Alternar para o editor da notação wiki",
+	"veforall-switch-editor-tool-title": "Alternar para o editor de texto wiki",
 	"apihelp-veforall-parsoid-utils-summary": "Converter de texto wiki para HTML e vice-versa",
 	"apihelp-veforall-parsoid-utils-param-from": "'html' ou 'wikitext'",
 	"apihelp-veforall-parsoid-utils-param-to": "'html' ou 'wikitext'",
@@ -16,5 +16,6 @@
 	"apihelp-veforall-parsoid-utils-example-1": "converter ''blah'' de texto wiki para HTML",
 	"veforall-api-error-unsupported-conversion": "A conversão de '$1' para '$2' não é suportada.",
 	"veforall-api-error-unsupported-parser-conversion": "A conversão de '$1' para '$2' não é suportada pelo analisador sintático central.",
-	"veforall-api-error-parsoid-error": "O pedido de $1 para conversão de $2 para $3 de conteúdo ligado ao título $4 falhou: $5"
+	"veforall-api-error-parsoid-error": "O pedido de $1 para conversão de $2 para $3 de conteúdo ligado ao título $4 falhou: $5",
+	"veforall-form-instances-not-minimized": "Devido a limitações do software, algumas caixas recolhidas tiveram de ser expandidas para que este formulário possa ser enviado. Reenvie o formulário agora, por favor."
 }

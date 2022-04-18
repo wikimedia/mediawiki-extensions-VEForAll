@@ -6,7 +6,7 @@
 		]
 	},
 	"veforall-desc": "Uma biblioteca para as extensões adicionarem o VisualEditor",
-	"veforall-switch-editor-tool-title": "Alternar para o editor da notação wiki",
+	"veforall-switch-editor-tool-title": "Alternar para o editor de texto wiki",
 	"apihelp-veforall-parsoid-utils-summary": "Converter de texto wiki para HTML e vice-versa",
 	"apihelp-veforall-parsoid-utils-param-from": "'html' ou 'wikitext'",
 	"apihelp-veforall-parsoid-utils-param-to": "'html' ou 'wikitext'",

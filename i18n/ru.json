@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Redredsonia",
-			"Vlad5250"
+			"Vlad5250",
+			"Kaganer"
 		]
 	},
-	"veforall-switch-editor-tool-title": "Переключить на редактор вики-текста",
+	"veforall-switch-editor-tool-title": "Переключиться на редактор вики-текста",
 	"apihelp-veforall-parsoid-utils-param-from": "'html' или 'вики-текст'",
 	"apihelp-veforall-parsoid-utils-param-to": "'html' или 'вики-текст'",
 	"apihelp-veforall-parsoid-utils-param-content": "содержимое для преобразования",

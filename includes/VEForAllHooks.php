@@ -5,6 +5,7 @@ namespace VEForAll;
 use ApiParsoidTrait;
 use FatalError;
 use Hooks;
+use MediaWiki\MediaWikiServices;
 use MWException;
 use OutputPage;
 use Skin;
@@ -161,7 +162,13 @@ class VEForAllHooks {
 	public static function onBeforePageDisplay( $output, $skin ) {
 		$user = $output->getUser();
 		$vars = [];
-		$vars['VisualEditorEnable'] = $user->getOption( 'visualeditor-enable' );
+		if ( method_exists( MediaWikiServices::class, 'getUserOptionsLookup' ) ) {
+			// MediaWiki 1.35+
+			$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
+			$vars['VisualEditorEnable'] = $userOptionsLookup->getOption( $user, 'visualeditor-enable' );
+		} else {
+			$vars['VisualEditorEnable'] = $user->getOption( 'visualeditor-enable' );
+		}
 		$output->addJSConfigVars( 'VEForAll', $vars );
 	}
 

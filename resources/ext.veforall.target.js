@@ -218,6 +218,10 @@
 			if ( withinTable && curLine.indexOf( '|+' ) > -1 ) {
 				lines[ i ] = curLine.replace( /\|\+/g, '{{!}}+' );
 			}
+			// colspan/rowspan case (`|rowspan=`/`|colspan=`). See https://www.mediawiki.org/wiki/Help:Tables
+			if ( withinTable && ( curLine.indexOf( 'colspan' ) > -1 || curLine.indexOf( 'rowspan' ) > -1 ) ) {
+				lines[ i ] = curLine.replace( /(colspan|rowspan)="(\d+?)"\s{0,}\|/, '$1="$2" {{!}}' ).replace( /^\s{0,}\|/, '{{!}} ' );
+			}
 			if ( curLine.indexOf( '|}' ) === 0 ) {
 				withinTable = false;
 			}

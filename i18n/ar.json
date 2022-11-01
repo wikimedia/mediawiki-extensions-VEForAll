@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Meno25",
 			"ديفيد"
 		]
 	},
@@ -15,5 +16,6 @@
 	"apihelp-veforall-parsoid-utils-example-1": "تحويل ''blah'' من نص الويكي إلى html",
 	"veforall-api-error-unsupported-conversion": "التحويل من \"$1\" إلى \"$2\" غير مدعوم.",
 	"veforall-api-error-unsupported-parser-conversion": "التحويل من \"$1\" إلى \"$2\" غير مدعوم من قبل المحلل الأساسي.",
-	"veforall-api-error-parsoid-error": "فشل طلب $1 لتحويل $2 إلى $3 من المحتوى المتصل بالعنوان $4: $5"
+	"veforall-api-error-parsoid-error": "فشل طلب $1 لتحويل $2 إلى $3 من المحتوى المتصل بالعنوان $4: $5",
+	"veforall-form-instances-not-minimized": "بسبب القيود الموجودة في البرنامج ، كان لا بد من توسيع بعض الصناديق المنهارة قبل إرسال هذا النموذج. يرجى إعادة إرسال النموذج الآن."
 }

@@ -56,7 +56,7 @@
 	mw.veForAll.Editor.prototype.initCallbacks = [];
 
 	mw.veForAll.Editor.prototype.createTarget = function () {
-		var self = this, wrapperNode, maxHeight;
+		var self = this, $wrapperNode, maxHeight;
 
 		if ( $( this.$node ).hasClass( 'toolbarOnTop' ) ) {
 			this.target = new mw.veForAll.Targetwide( this.$node, $( this.$node ).val() );
@@ -64,8 +64,7 @@
 			this.target = new mw.veForAll.Target( this.$node, $( this.$node ).val() );
 		}
 
-		// Handle keyup events on ve surfaces and textarea to let
-		// others know that something has changed there.
+		// Various tasks to do once VE has finished being applied.
 		self.target.on( 'editor-ready', function () {
 			// Catch keyup events on surface to comply with
 			// saveAndContinue button state and changes warning.
@@ -78,17 +77,17 @@
 			self.target.$node.on( 'keyup', function () {
 				self.$node.trigger( 'change' );
 			} );
+
+			// Set max height of the textarea, if it was specified.
+			$wrapperNode = self.$node.parent( '.ve-area-wrapper' );
+			maxHeight = $wrapperNode.attr( 'data-max-height' );
+			if ( maxHeight !== undefined ) {
+				$wrapperNode.find( '.ve-ce-documentNode' ).css( 'max-height', maxHeight )
+					.css( 'overflow-y', 'auto' );
+			}
+
+			mw.hook( 'veForAll.targetCreated' ).fire( this );
 		} );
-
-		// Set max height of the textarea, if it was specified.
-		wrapperNode = self.$node.parent( '.ve-area-wrapper' );
-		maxHeight = wrapperNode.attr( 'data-max-height' );
-		if ( maxHeight !== undefined ) {
-			wrapperNode.find( '.ve-ce-documentNode' ).css( 'max-height', maxHeight )
-				.css( 'overflow-y', 'auto' );
-		}
-
-		mw.hook( 'veForAll.targetCreated' ).fire( this );
 
 		return this.target;
 	};

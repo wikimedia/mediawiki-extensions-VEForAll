@@ -1,20 +1,19 @@
-/*!
+/*
  * VEForAll Editor class.
  *
  * @author Pierre Boutet
- * @copyright Copyright © 2016-2017, Wikifab
  */
 
 ( function ( $, mw, OO, ve ) {
 	'use strict';
 
 	/**
-	 * this launch the visual editor on a given textarea
+	 * This launches the VisualEditor on a given textarea.
 	 *
-	 * usage :
+	 * Usage:
 	 *   new mw.veForAll.Editor(node, initialContent);
-	 * where :
-	 * - node is the html element of the textarea
+	 * where:
+	 * - node is the HTML element of the textarea
 	 * - initialContent is the text content (wikitext format)
 	 *
 	 */
@@ -34,9 +33,9 @@
 		// node the editor is associated with.
 		this.$node = $( $node );
 
-		// HACK: make textarea look pending in case we didn't come from an editor switch
+		// @hack: make textarea look pending in case we didn't come from an editor switch.
 		// Once this is an OO.ui.TextInputWidget we'll be able to use real PendingElement
-		// functionality for this
+		// functionality for this.
 		this.$node
 			.prop( 'disabled', true )
 			.addClass( 'oo-ui-texture-pending' );

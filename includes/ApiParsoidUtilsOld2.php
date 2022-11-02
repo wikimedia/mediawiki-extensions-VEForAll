@@ -4,18 +4,20 @@ namespace VEForAll;
 
 use ApiBase;
 use ApiMessage;
-use MediaWiki\Extension\VisualEditor\VisualEditorParsoidClient;
+use ApiParsoidTrait;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use ParserOptions;
 use ParsoidVirtualRESTService;
 use Title;
+use VirtualRESTServiceClient;
 
 /**
  * Heavily based on the ApiParsoidUtils and Utils classes from the
  * StructuredDiscussions extension.
  */
-class ApiParsoidUtils extends ApiBase {
+class ApiParsoidUtilsOld2 extends ApiBase {
+	use ApiParsoidTrait;
 
 	public function execute() {
 		$params = $this->extractRequestParams();
@@ -86,8 +88,6 @@ class ApiParsoidUtils extends ApiBase {
 		}
 
 		$convertedContent = '';
-		// We don't actually use this object, but it's useful in
-		// determining which function to call.
 		$vrsObject = $this->getVRSObject();
 		if ( $vrsObject === null ) {
 			if ( $from !== 'wikitext' || $to !== 'html' ) {
@@ -97,7 +97,8 @@ class ApiParsoidUtils extends ApiBase {
 			}
 			$convertedContent = $this->parser( $content, $title );
 		} else {
-			$convertedContent = $this->parsoid( $from, $to, $content, $title );
+			$convertedContent = $this->parsoid( $from, $to, $content, $title,
+				$vrsObject );
 		}
 
 		return $convertedContent;
@@ -110,30 +111,56 @@ class ApiParsoidUtils extends ApiBase {
 	 * @param string $to Format to convert to: html|wikitext
 	 * @param string $content
 	 * @param Title $title
+	 * @param ParsoidVirtualRESTService $vrsObject
 	 * @return string Returns the converted content
 	 */
-	private function parsoid( $from, $to, $content, Title $title ) {
-		if ( class_exists( VisualEditorParsoidClient::class ) ) {
-			// MW 1.39
-			$client = VisualEditorParsoidClient::factory();
-		} else {
-			// MW 1.40+
-			$parsoidClientFactory = MediaWikiServices::getInstance()
-				->getService( VisualEditorParsoidClientFactory::SERVICE_NAME );
-			$client = $parsoidClientFactory->createParsoidClient( false );
+	private function parsoid( $from, $to, $content, Title $title,
+		$vrsObject ) {
+		global $wgVersion;
+
+		$serviceClient = new VirtualRESTServiceClient(
+			MediaWikiServices::getInstance()->getHttpRequestFactory()->createMultiClient() );
+		$serviceClient->mount( '/restbase/', $vrsObject );
+
+		$prefixedDbTitle = $title->getPrefixedDBkey();
+		$params = [
+			$from => $content,
+			'body_only' => 'true',
+		];
+		if ( $from === 'html' ) {
+			$params['scrub_wikitext'] = 'true';
+		}
+		$url = '/restbase/local/v1/transform/' . $from . '/to/' . $to . '/' .
+			urlencode( $prefixedDbTitle );
+		$request = [
+			'method' => 'POST',
+			'url' => $url,
+			'body' => $params,
+			'headers' => [
+				'Accept' => 'text/html; charset=utf-8;',
+				'User-Agent' => "VEForAll-MediaWiki/$wgVersion",
+			],
+		];
+		$response = $serviceClient->run( $request );
+		if ( $response['code'] !== 200 ) {
+			if ( $response['error'] !== '' ) {
+				$statusMsg = $response['error'];
+			} else {
+				$statusMsg = $response['code'];
+			}
+			$vrsInfo = $serviceClient->getMountAndService( '/restbase/' );
+			$serviceName = $vrsInfo[1] ? $vrsInfo[1]->getName() : 'VRS service';
+			$this->dieCustomUsageMessage( 'veforall-api-error-parsoid-error',
+				[ $serviceName, $from, $to, $prefixedDbTitle, $statusMsg ] );
+			return null;
 		}
 
-		if ( $from == 'wikitext' ) {
-			$response = $client->transformWikitext(
-				$title, $title->getPageLanguage(), $content, $bodyOnly = false, $oldid = null, $stash = false
-			);
-		} else {
-			$response = $client->transformHtml(
-				$title, $title->getPageLanguage(), $content, $oldid = null, $etag = null
-			);
+		$content = $response['body'];
+		// HACK remove trailing newline inserted by Parsoid (T106925)
+		if ( $to === 'wikitext' ) {
+			$content = preg_replace( '/\\n$/', '', $content );
 		}
-
-		return $response['body'];
+		return $content;
 	}
 
 	/**
@@ -164,49 +191,4 @@ class ApiParsoidUtils extends ApiBase {
 			]
 		);
 	}
-
-	/**
-	 * Create the Parsoid Virtual REST Service object to be used in API calls.
-	 * @return ParsoidVirtualRESTService|null
-	 */
-	private function getVRSObject() {
-		// phpcs:ignore MediaWiki.Usage.ExtendClassUsage.FunctionConfigUsage
-		global $wgVirtualRestConfig, $wgVisualEditorParsoidAutoConfig;
-
-		// the params array to create the service object with
-		$params = [];
-		// the global virtual rest service config object, if any
-		if ( isset( $wgVirtualRestConfig['modules'] ) &&
-			isset( $wgVirtualRestConfig['modules']['parsoid'] ) ) {
-			// there's a global parsoid config, use it next
-			$params = $wgVirtualRestConfig['modules']['parsoid'];
-			$params['restbaseCompat'] = true;
-		} elseif ( $wgVisualEditorParsoidAutoConfig ) {
-			$params = $wgVirtualRestConfig['modules']['parsoid'] ?? [];
-			$params['restbaseCompat'] = true;
-			// forward cookies on private wikis
-			$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
-			$params['forwardCookies'] = !$permissionManager->isEveryoneAllowed( 'read' );
-		} else {
-			return null;
-		}
-		// merge the global and service-specific params
-		if ( isset( $wgVirtualRestConfig['global'] ) ) {
-			$params = array_merge( $wgVirtualRestConfig['global'], $params );
-		}
-		// set up cookie forwarding
-		if ( $params['forwardCookies'] &&
-			!MediaWikiServices::getInstance()
-				->getPermissionManager()
-				->isEveryoneAllowed( 'read' )
-		) {
-			$params['forwardCookies'] =
-				RequestContext::getMain()->getRequest()->getHeader( 'Cookie' );
-		} else {
-			$params['forwardCookies'] = false;
-		}
-		// create the VRS object
-		return new ParsoidVirtualRESTService( $params );
-	}
-
 }

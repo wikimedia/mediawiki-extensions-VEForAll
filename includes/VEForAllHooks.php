@@ -14,11 +14,16 @@ class VEForAllHooks {
 
 	public static function registerClasses() {
 		global $wgAutoloadClasses, $wgAPIModules;
-		if ( class_exists( ApiParsoidTrait::class ) || trait_exists( 'ApiParsoidTrait' ) ) {
-			// MW 1.35.? +
+		if ( trait_exists( 'MediaWiki\Extension\VisualEditor\ApiParsoidTrait' ) ) {
+			// MW 1.39+
 			$wgAutoloadClasses['VEForAll\\ApiParsoidUtils'] = __DIR__ . '/ApiParsoidUtils.php';
 			$wgAPIModules['veforall-parsoid-utils'] = 'VEForAll\\ApiParsoidUtils';
+		} elseif ( class_exists( ApiParsoidTrait::class ) || trait_exists( 'ApiParsoidTrait' ) ) {
+			// MW 1.35.? - MW 1.38
+			$wgAutoloadClasses['VEForAll\\ApiParsoidUtilsOld2'] = __DIR__ . '/ApiParsoidUtilsOld2.php';
+			$wgAPIModules['veforall-parsoid-utils'] = 'VEForAll\\ApiParsoidUtilsOld2';
 		} else {
+			// MW < 1.35.?
 			$wgAutoloadClasses['VEForAll\\ApiParsoidUtilsOld'] = __DIR__ . '/ApiParsoidUtilsOld.php';
 			$wgAPIModules['veforall-parsoid-utils'] = 'VEForAll\\ApiParsoidUtilsOld';
 		}

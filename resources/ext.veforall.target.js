@@ -296,7 +296,18 @@
 			content: content,
 			title: this.getPageName()
 		} ).then( function ( data ) {
-			target.createWithHtmlContent( data[ 'veforall-parsoid-utils' ].content );
+			var htmlContent = data[ 'veforall-parsoid-utils' ].content;
+			// For some reason, certain wikitext (like section names
+			// containing commas) sometimes leads to this strange
+			// <span> tag within the returned HTML, which in turn
+			// leads to the message "Sorry, this element can only be
+			// edited in source mode for now" showing up in the
+			// editor in those parts. So, just get rid of this tag.
+			// @todo - it would be better, of course, to figure out
+			// the underlying cause of this problem, and fix that.
+			var regex = /<span [^>]* typeof="mw:FallbackId" [^>]*><\/span>/g;
+			htmlContent = htmlContent.replace( regex, '' );
+			target.createWithHtmlContent( htmlContent );
 			$( target.$node )
 				.prop( 'disabled', false )
 				.removeClass( 'oo-ui-texture-pending' );

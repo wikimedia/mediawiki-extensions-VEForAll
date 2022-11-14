@@ -3,10 +3,6 @@
 ( function ( mw, OO, ve ) {
 	'use strict';
 
-	// For MW < 1.32, the ve.init.sa.Target class is defined, so use that; otherwise
-	// use the class defined in VisualEditor itself.
-	var parentClass = ve.init.sa && ve.init.sa.Target ? ve.init.sa.Target : ve.init.mw.Target;
-
 	mw.veForAll = mw.veForAll || {
 		ui: {}
 	};
@@ -17,7 +13,7 @@
 	 * @param node
 	 * @param content
 	 * @class
-	 * @extends ve.init.sa.Target
+	 * @extends ve.init.mw.Target
 	 */
 	mw.veForAll.Target = function ( node, content ) {
 		var config = {};
@@ -45,7 +41,7 @@
 		this.init( content );
 	};
 
-	OO.inheritClass( mw.veForAll.Target, parentClass );
+	OO.inheritClass( mw.veForAll.Target, ve.init.mw.Target );
 
 	mw.veForAll.Target.prototype.init = function ( content ) {
 		this.convertToHtml( content );

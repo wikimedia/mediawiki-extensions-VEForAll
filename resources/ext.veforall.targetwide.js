@@ -12,7 +12,7 @@
 	 * @param node
 	 * @param content
 	 * @class
-	 * @extends ve.init.sa.Target
+	 * @extends ve.init.mw.Target
 	 */
 	mw.veForAll.Targetwide = function ( node, content ) {
 		mw.veForAll.Targetwide.parent.call( this, node, content );

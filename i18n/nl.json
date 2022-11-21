@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mainframe98"
+			"Mainframe98",
+			"McDutchie"
 		]
 	},
 	"veforall-switch-editor-tool-title": "Overschakelen naar wikitekstverwerker",
@@ -12,5 +13,5 @@
 	"apihelp-veforall-parsoid-utils-param-title": "titel van de pagina met de inhoud",
 	"apihelp-veforall-parsoid-utils-example-1": "\"blah\" van wikitekst naar html converteren",
 	"veforall-api-error-unsupported-conversion": "De conversie van '$1' naar '$2' wordt niet ondersteund.",
-	"veforall-api-error-parsoid-error": "Het verzoek van $2 om $1 naar $3 te converteren voor inhoud gekoppeld aan de titel $4 is mislukt: $5"
+	"veforall-api-error-parsoid-error": "Het verzoek aan $1 om de met de titel $4 in verband staande inhoud van $2 in $3 om te zetten is mislukt: $5"
 }

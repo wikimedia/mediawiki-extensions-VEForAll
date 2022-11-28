@@ -17,5 +17,5 @@
 	"apihelp-veforall-parsoid-utils-example-1": "convertir ''blah'' de wikitext en html",
 	"veforall-api-error-unsupported-conversion": "La conversion de « $1 » en « $2 » n’est pas prise en charge.",
 	"veforall-api-error-unsupported-parser-conversion": "La conversion de « $1 » en « $2 » n’est pas prise en charge par l’analyseur central.",
-	"veforall-api-error-parsoid-error": "Echec dans la demande à $1 pour $2 à $3 de conversion de contenu relatif au titre $4 : $5"
+	"veforall-api-error-parsoid-error": "Échec de la demande à $1 de convertir le contenu lié au titre $4 de $2 en $3 : $5"
 }

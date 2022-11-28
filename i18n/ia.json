@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"veforall-desc": "Un bibliotheca pro integrar VisualEditor in extensiones",
+	"veforall-switch-editor-tool-title": "Cambiar al editor de wikitexto",
+	"apihelp-veforall-parsoid-utils-summary": "Converter texto de wikitexto in HTML e vice versa",
+	"apihelp-veforall-parsoid-utils-param-from": "'html' o 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-to": "'html' o 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-content": "contento a converter",
+	"apihelp-veforall-parsoid-utils-param-title": "titulo del pagina que tene le contento",
+	"apihelp-veforall-parsoid-utils-param-pageid": "ID del pagina que tene le contento",
+	"apihelp-veforall-parsoid-utils-example-1": "converter ''blah'' de wikitexto in html",
+	"veforall-api-error-unsupported-conversion": "Le conversion de '$1' a '$2' non es supportate.",
+	"veforall-api-error-unsupported-parser-conversion": "Le conversion de '$1' a '$2' non es supportate per le analysator syntactic central.",
+	"veforall-api-error-parsoid-error": "Fallimento del requesta a $1 de converter le contento ligate al titulo $4 de $2 in $3: $5"
+}

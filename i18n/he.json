@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Guycn2"
 		]
 	},
@@ -15,5 +16,6 @@
 	"apihelp-veforall-parsoid-utils-example-1": "המרת הטקסט ''blah'' מקוד ויקי ל־HTML",
 	"veforall-api-error-unsupported-conversion": "המרה מ־$1 ל־$2 אינה נתמכת.",
 	"veforall-api-error-unsupported-parser-conversion": "המרה מ־$1 ל־$2 אינה נתמכת על־ידי מפענח הליבה.",
-	"veforall-api-error-parsoid-error": "בקשת $1 להמרת תוכן המחובר לכותרת $4 מ־$2 ל־$3 נכשלה: $5"
+	"veforall-api-error-parsoid-error": "בקשת $1 להמרת תוכן המחובר לכותרת $4 מ־$2 ל־$3 נכשלה: $5",
+	"veforall-form-instances-not-minimized": "עקב מגבלות בתוכנה, היה צורך להרחיב כמה תיבות מצומצמות לפני שהיה אפשר לשלוח את הטופס הזה. נא לשלוח שוב את הטופס עכשיו."
 }

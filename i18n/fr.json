@@ -13,7 +13,7 @@
 	"apihelp-veforall-parsoid-utils-param-to": "'html' ou 'wikitext'",
 	"apihelp-veforall-parsoid-utils-param-content": "contenu à convertir",
 	"apihelp-veforall-parsoid-utils-param-title": "titre de la page qui héberge le contenu",
-	"apihelp-veforall-parsoid-utils-param-pageid": "ID de la page qui héberge le contenu",
+	"apihelp-veforall-parsoid-utils-param-pageid": "Identifiant de la page qui détient le contenu",
 	"apihelp-veforall-parsoid-utils-example-1": "convertir ''blah'' de wikitext en html",
 	"veforall-api-error-unsupported-conversion": "La conversion de « $1 » en « $2 » n’est pas prise en charge.",
 	"veforall-api-error-unsupported-parser-conversion": "La conversion de « $1 » en « $2 » n’est pas prise en charge par l’analyseur central.",

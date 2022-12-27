@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"veforall-switch-editor-tool-title": "Preklopi na urejevalnik vikibesedila.",
+	"apihelp-veforall-parsoid-utils-param-from": "»html« ali »vikibesedilo«",
+	"apihelp-veforall-parsoid-utils-param-to": "»html« ali »vikibesedilo«",
+	"apihelp-veforall-parsoid-utils-example-1": "Pretvori ''blah'' iz vikibesedila v html"
+}

@@ -4,8 +4,16 @@
 			"Eleassar"
 		]
 	},
+	"veforall-desc": "Knjižnica za razširitve VisualEditorja",
 	"veforall-switch-editor-tool-title": "Preklopi na urejevalnik vikibesedila.",
+	"apihelp-veforall-parsoid-utils-summary": "Pretvori besedilo iz vikibesedila v HTML in nasprotno",
 	"apihelp-veforall-parsoid-utils-param-from": "»html« ali »vikibesedilo«",
 	"apihelp-veforall-parsoid-utils-param-to": "»html« ali »vikibesedilo«",
-	"apihelp-veforall-parsoid-utils-example-1": "Pretvori ''blah'' iz vikibesedila v html"
+	"apihelp-veforall-parsoid-utils-param-content": "vsebina za pretvorbo",
+	"apihelp-veforall-parsoid-utils-param-title": "naslov strani z vsebino",
+	"apihelp-veforall-parsoid-utils-param-pageid": "ID strani, ki vsebuje vsebino",
+	"apihelp-veforall-parsoid-utils-example-1": "Pretvori ''blah'' iz vikibesedila v html",
+	"veforall-api-error-unsupported-conversion": "Pretvorba iz »$1« v »$2« ni podprta.",
+	"veforall-api-error-unsupported-parser-conversion": "Jedrni razčlenjevalnik ne podpira pretvorbe iz »$1« v »$2«.",
+	"veforall-api-error-parsoid-error": "Zahtevek za $1 za pretvorbo vsebine, povezane z naslovom $4, iz $2 v $3 ni uspel: $5"
 }

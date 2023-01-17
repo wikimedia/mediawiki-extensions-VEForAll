@@ -4,7 +4,7 @@
 			"Eleassar"
 		]
 	},
-	"veforall-desc": "Knjižnica za razširitve VisualEditorja",
+	"veforall-desc": "Knjižnica razširitev za Vizualni urejevalnik",
 	"veforall-switch-editor-tool-title": "Preklopi na urejevalnik vikibesedila.",
 	"apihelp-veforall-parsoid-utils-summary": "Pretvori besedilo iz vikibesedila v HTML in nasprotno",
 	"apihelp-veforall-parsoid-utils-param-from": "»html« ali »vikibesedilo«",

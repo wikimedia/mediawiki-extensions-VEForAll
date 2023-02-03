@@ -16,5 +16,5 @@
 	"veforall-api-error-unsupported-conversion": "Le conversion de '$1' a '$2' non es supportate.",
 	"veforall-api-error-unsupported-parser-conversion": "Le conversion de '$1' a '$2' non es supportate per le analysator syntactic central.",
 	"veforall-api-error-parsoid-error": "Fallimento del requesta a $1 de converter le contento ligate al titulo $4 de $2 in $3: $5",
-	"veforall-form-instances-not-minimized": "A causa de limitationes in le software, alcun quadros plicate debeva esser displicate ante que iste formulario poteva esser submittite. Per favor re-submitte le formulario ora."
+	"veforall-form-instances-not-minimized": "A causa de limitationes in le software, alcun quadros contrahite debeva esser expandite ante que iste formulario poteva esser submittite. Per favor re-submitte le formulario ora."
 }

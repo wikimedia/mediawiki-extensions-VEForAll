@@ -1,6 +1,6 @@
 {
 	"name": "VEForAll",
-	"version": "0.4.1",
+	"version": "0.5-alpha",
 	"author": [
 		"Pierre Boutet", "Clément Flipo", "Ike Hecht", "Yaron Koren", "Cindy Cicalese"
 	],
@@ -9,7 +9,7 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "other",
 	"requires": {
-		"MediaWiki": ">= 1.32.0",
+		"MediaWiki": ">= 1.35.0",
 		"extensions": {
 			"VisualEditor": "*"
 		}

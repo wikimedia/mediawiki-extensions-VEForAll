@@ -2,7 +2,6 @@
 
 namespace VEForAll;
 
-use ApiParsoidTrait;
 use ExtensionRegistry;
 use FatalError;
 use Hooks;
@@ -19,14 +18,10 @@ class VEForAllHooks {
 			// MW 1.39+
 			$wgAutoloadClasses['VEForAll\\ApiParsoidUtils'] = __DIR__ . '/ApiParsoidUtils.php';
 			$wgAPIModules['veforall-parsoid-utils'] = 'VEForAll\\ApiParsoidUtils';
-		} elseif ( class_exists( ApiParsoidTrait::class ) || trait_exists( 'ApiParsoidTrait' ) ) {
-			// MW 1.35.? - MW 1.38
+		} else {
+			// MW < 1.39
 			$wgAutoloadClasses['VEForAll\\ApiParsoidUtilsOld2'] = __DIR__ . '/ApiParsoidUtilsOld2.php';
 			$wgAPIModules['veforall-parsoid-utils'] = 'VEForAll\\ApiParsoidUtilsOld2';
-		} else {
-			// MW < 1.35.?
-			$wgAutoloadClasses['VEForAll\\ApiParsoidUtilsOld'] = __DIR__ . '/ApiParsoidUtilsOld.php';
-			$wgAPIModules['veforall-parsoid-utils'] = 'VEForAll\\ApiParsoidUtilsOld';
 		}
 	}
 
@@ -178,14 +173,10 @@ class VEForAllHooks {
 		}
 
 		$user = $output->getUser();
-		$vars = [];
-		if ( method_exists( MediaWikiServices::class, 'getUserOptionsLookup' ) ) {
-			// MediaWiki 1.35+
-			$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
-			$vars['VisualEditorEnable'] = $userOptionsLookup->getOption( $user, 'visualeditor-enable' );
-		} else {
-			$vars['VisualEditorEnable'] = $user->getOption( 'visualeditor-enable' );
-		}
+		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
+		$vars = [
+			'VisualEditorEnable' => $userOptionsLookup->getOption( $user, 'visualeditor-enable' )
+		];
 		$output->addJSConfigVars( 'VEForAll', $vars );
 	}
 

@@ -3,6 +3,7 @@
 namespace VEForAll;
 
 use ApiParsoidTrait;
+use ExtensionRegistry;
 use FatalError;
 use Hooks;
 use MediaWiki\MediaWikiServices;
@@ -165,6 +166,17 @@ class VEForAllHooks {
 	 * @param Skin $skin Skin object that will be used to generate the page
 	 */
 	public static function onBeforePageDisplay( $output, $skin ) {
+		$services = MediaWikiServices::getInstance();
+		if ( !(
+			ExtensionRegistry::getInstance()->isLoaded( 'MobileFrontend' ) &&
+			$services->getService( 'MobileFrontend.Context' )
+				->shouldDisplayMobileView()
+		) ) {
+			$output->addModules( [
+				'ext.veforall.core.desktop'
+			] );
+		}
+
 		$user = $output->getUser();
 		$vars = [];
 		if ( method_exists( MediaWikiServices::class, 'getUserOptionsLookup' ) ) {

@@ -39,16 +39,23 @@
 			],
 			"dependencies": [
 				"ext.visualEditor.core",
-				"ext.visualEditor.core.desktop",
 				"ext.visualEditor.data",
 				"ext.visualEditor.icons",
 				"ext.visualEditor.mediawiki",
-				"ext.visualEditor.desktopTarget",
 				"ext.visualEditor.mwextensions.desktop",
 				"ext.visualEditor.mwimage",
 				"ext.visualEditor.mwlink",
 				"ext.visualEditor.mwtransclusion",
 				"oojs-ui.styles.icons-editing-advanced"
+			]
+		},
+		"ext.veforall.core.desktop": {
+			"dependencies": [
+				"ext.visualEditor.core.desktop",
+				"ext.visualEditor.desktopTarget"
+			],
+			"targets": [
+				"desktop"
 			]
 		},
 		"ext.veforall.main": {

@@ -9,6 +9,7 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use ParserOptions;
 use ParsoidVirtualRESTService;
+use RequestContext;
 use Title;
 
 /**

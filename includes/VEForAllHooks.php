@@ -4,7 +4,6 @@ namespace VEForAll;
 
 use ExtensionRegistry;
 use FatalError;
-use Hooks;
 use MediaWiki\MediaWikiServices;
 use MWException;
 use OutputPage;
@@ -200,7 +199,8 @@ class VEForAllHooks {
 	 * @throws MWException
 	 */
 	public static function getVeToolbarConfig( $type = 'normal' ) {
-		Hooks::run( 'VEForAllToolbarConfig' . ucfirst( $type ), [ &self::$defaultConfig[ $type ] ] );
+		MediaWikiServices::getInstance()->getHookContainer()
+			->run( 'VEForAllToolbarConfig' . ucfirst( $type ), [ &self::$defaultConfig[ $type ] ] );
 		return array_values( self::$defaultConfig[ $type ] );
 	}
 

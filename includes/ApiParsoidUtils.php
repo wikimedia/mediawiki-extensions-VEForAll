@@ -5,6 +5,7 @@ namespace VEForAll;
 use ApiBase;
 use ApiMessage;
 use MediaWiki\Extension\VisualEditor\VisualEditorParsoidClient;
+use MediaWiki\Extension\VisualEditor\VisualEditorParsoidClientFactory;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use ParserOptions;

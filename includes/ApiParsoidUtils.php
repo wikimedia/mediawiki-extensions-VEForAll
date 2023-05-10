@@ -154,17 +154,12 @@ class ApiParsoidUtils extends ApiBase {
 	/**
 	 * Die with a custom usage message.
 	 * @param string $message_name the name of the custom message
-	 * @param params $params parameters to the custom message
+	 * @param array $params parameters to the custom message
 	 */
 	private function dieCustomUsageMessage( $message_name, $params = [] ) {
-		// phpcs:ignore MediaWiki.Usage.ExtendClassUsage.FunctionVarUsage
-		$errorMessage = wfMessage( $message_name, $params );
+		$errorMessage = $this->msg( $message_name, $params );
 		LoggerFactory::getInstance( 'VEForAll' )->error( $errorMessage );
-		$this->dieWithError(
-			[
-				ApiMessage::create( $errorMessage )
-			]
-		);
+		$this->dieWithError( [ ApiMessage::create( $errorMessage ) ] );
 	}
 
 	/**

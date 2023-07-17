@@ -8,10 +8,12 @@ use MediaWiki\Extension\VisualEditor\VisualEditorParsoidClient;
 use MediaWiki\Extension\VisualEditor\VisualEditorParsoidClientFactory;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MWException;
 use ParserOptions;
 use ParsoidVirtualRESTService;
 use RequestContext;
 use Title;
+use WikitextContent;
 
 /**
  * Heavily based on the ApiParsoidUtils and Utils classes from the
@@ -87,6 +89,16 @@ class ApiParsoidUtils extends ApiBase {
 			return null;
 		}
 
+		if ( class_exists( 'MediaWiki\Parser\Parsoid\ParsoidParserFactory' ) ) {
+			// MW 1.41+
+			if ( $from == 'wikitext' ) {
+				return $this->wikitextToHTML( $content, $title );
+			} else {
+				return $this->htmlToWikitext( $content, $title );
+			}
+		}
+
+		// MW 1.39 or 1.40
 		$convertedContent = '';
 		// We don't actually use this object, but it's useful in
 		// determining which function to call.
@@ -106,6 +118,51 @@ class ApiParsoidUtils extends ApiBase {
 	}
 
 	/**
+	 * @param string $wikitext
+	 * @param Title $title
+	 *
+	 * @return string The converted wikitext to HTML
+	 *
+	 * Copied from StructuredDiscussions' Utils::wikitextToHTML().
+	 */
+	private static function wikitextToHTML( string $wikitext, Title $title ) {
+		$parserOptions = ParserOptions::newFromAnon();
+		$parserOptions->setRenderReason( __METHOD__ );
+
+		$parserFactory = MediaWikiServices::getInstance()->getParsoidParserFactory()->create();
+		$parserOutput = $parserFactory->parse( $wikitext, $title, $parserOptions );
+		return $parserOutput->getRawText();
+	}
+
+	/**
+	 * @param string $html
+	 * @param Title $title
+	 *
+	 * @return string The converted HTML to wikitext
+	 * @throws MWException When the conversion is unsupported
+	 *
+	 * Based on StructuredDiscussions' Utils::htmlToWikitext().
+	 */
+	private static function htmlToWikitext( string $html, Title $title ) {
+		$transform = MediaWikiServices::getInstance()->getHtmlTransformFactory()
+			->getHtmlToContentTransform( $html, $title );
+
+		$transform->setOptions( [
+			'contentmodel' => CONTENT_MODEL_WIKITEXT,
+			'offsetType' => 'byte'
+		] );
+
+		/** @var TextContent $content */
+		$content = $transform->htmlToContent();
+
+		if ( !$content instanceof WikitextContent ) {
+			throw new MWException( 'Conversion to wikitext failed.' );
+		}
+
+		return trim( $content->getTextForSearchIndex() );
+	}
+
+	/**
 	 * Convert from/to wikitext/html via Parsoid. This will assume Parsoid is
 	 * installed and configured.
 	 * @param string $from Format of content to convert: html|wikitext
@@ -119,7 +176,7 @@ class ApiParsoidUtils extends ApiBase {
 			// MW 1.39
 			$client = VisualEditorParsoidClient::factory();
 		} else {
-			// MW 1.40+
+			// MW 1.40 (later versions are handled elsewhere)
 			$parsoidClientFactory = MediaWikiServices::getInstance()
 				->getService( VisualEditorParsoidClientFactory::SERVICE_NAME );
 			$client = $parsoidClientFactory->createParsoidClient( false );

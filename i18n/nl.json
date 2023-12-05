@@ -5,13 +5,17 @@
 			"McDutchie"
 		]
 	},
+	"veforall-desc": "Een bibliotheek waarmee de visuele editor aan uitbreidingen kan worden toegevoegd",
 	"veforall-switch-editor-tool-title": "Overschakelen naar wikitekstverwerker",
 	"apihelp-veforall-parsoid-utils-summary": "Tekst van Wikitekst naar HTML en terug converteren",
 	"apihelp-veforall-parsoid-utils-param-from": "'html' of 'wikitext'",
 	"apihelp-veforall-parsoid-utils-param-to": "'html' of 'wikitext'",
 	"apihelp-veforall-parsoid-utils-param-content": "de om te zetten inhoud",
 	"apihelp-veforall-parsoid-utils-param-title": "titel van de pagina met de inhoud",
+	"apihelp-veforall-parsoid-utils-param-pageid": "pagina-ID van de pagina die de inhoud bevat",
 	"apihelp-veforall-parsoid-utils-example-1": "\"blah\" van wikitekst naar html converteren",
 	"veforall-api-error-unsupported-conversion": "De conversie van '$1' naar '$2' wordt niet ondersteund.",
-	"veforall-api-error-parsoid-error": "Het verzoek aan $1 om de met de titel $4 in verband staande inhoud van $2 in $3 om te zetten is mislukt: $5"
+	"veforall-api-error-unsupported-parser-conversion": "Het omzetten van ‘$1’ in ‘$2’ wordt niet ondersteund door de kernparser.",
+	"veforall-api-error-parsoid-error": "Het verzoek aan $1 om de met de titel $4 in verband staande inhoud van $2 in $3 om te zetten is mislukt: $5",
+	"veforall-form-instances-not-minimized": "Vanwege beperkingen in de software moesten enkele samengevouwen vakken worden uitgevouwen voordat dit formulier kon worden verzonden. Verzend het formulier nu opnieuw."
 }

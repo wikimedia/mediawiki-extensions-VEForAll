@@ -186,6 +186,7 @@
 			this.$node.is( '.ve-for-all-waiting-for-update' ) ) {
 			return this.convertToWikiText( surface.getHtml() );
 		}
+		return $().promise();
 	};
 
 	mw.veForAll.Target.prototype.getPageName = function () {

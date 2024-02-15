@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Anterdc99",
 			"Diskdance",
 			"Liuxinyu970226",
 			"Tranve"
@@ -17,5 +18,6 @@
 	"apihelp-veforall-parsoid-utils-example-1": "将“blah”从wikitext转换为html",
 	"veforall-api-error-unsupported-conversion": "不支持从“$1”到“$2”的转换。",
 	"veforall-api-error-unsupported-parser-conversion": "核心解析器不支持从“$1”到“$2”的转换。",
-	"veforall-api-error-parsoid-error": "请求$1用于将连接到标题$4内容从$2转换为$3失败：$5"
+	"veforall-api-error-parsoid-error": "请求$1用于将连接到标题$4内容从$2转换为$3失败：$5",
+	"veforall-form-instances-not-minimized": "由于软件的限制，一些折叠框必须展开才能提交此表单。请立即重新提交表单。"
 }

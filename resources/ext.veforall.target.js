@@ -30,7 +30,7 @@
 		if ( node.hasClass( 'toolbarOnTop' ) ) {
 			this.toolbarPosition = 'top';
 			this.toolbarAutoHide = false;
-			config.toolbarConfig.floatable = true;
+			config.toolbarConfig.floatable = false;
 		}
 
 		mw.veForAll.Target.parent.call( this, config );

@@ -35,7 +35,8 @@
 	}
 
 	/**
-	 * Being called by PageForms on textareas with 'visualeditor' class present
+	 * The main function called by outside extensions - applies VisualEditor
+	 * onto any jQuery group of textareas.
 	 *
 	 * @return {boolean}
 	 */

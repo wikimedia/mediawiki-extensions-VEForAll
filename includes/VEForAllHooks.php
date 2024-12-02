@@ -17,14 +17,10 @@ class VEForAllHooks {
 			// MW 1.41+
 			$wgAutoloadClasses['VEForAll\\ApiParsoidUtils'] = __DIR__ . '/ApiParsoidUtils.php';
 			$wgAPIModules['veforall-parsoid-utils'] = 'VEForAll\\ApiParsoidUtils';
-		} elseif ( trait_exists( 'MediaWiki\Extension\VisualEditor\ApiParsoidTrait' ) ) {
+		} else {
 			// MW 1.39-1.40
 			$wgAutoloadClasses['VEForAll\\ApiParsoidUtilsOld'] = __DIR__ . '/ApiParsoidUtilsOld.php';
 			$wgAPIModules['veforall-parsoid-utils'] = 'VEForAll\\ApiParsoidUtilsOld';
-		} else {
-			// MW < 1.39
-			$wgAutoloadClasses['VEForAll\\ApiParsoidUtilsOld2'] = __DIR__ . '/ApiParsoidUtilsOld2.php';
-			$wgAPIModules['veforall-parsoid-utils'] = 'VEForAll\\ApiParsoidUtilsOld2';
 		}
 	}
 

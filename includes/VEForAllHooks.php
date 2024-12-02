@@ -174,13 +174,6 @@ class VEForAllHooks {
 				'ext.veforall.core.desktop'
 			] );
 		}
-
-		$user = $output->getUser();
-		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
-		$vars = [
-			'VisualEditorEnable' => $userOptionsLookup->getOption( $user, 'visualeditor-enable' )
-		];
-		$output->addJSConfigVars( 'VEForAll', $vars );
 	}
 
 	/**

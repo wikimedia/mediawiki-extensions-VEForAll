@@ -20,12 +20,6 @@
 	var veInstances = [];
 
 	function initVisualEditor() {
-
-		var config = mw.config.get( 'VEForAll' );
-		if ( !config.VisualEditorEnable ) {
-			return;
-		}
-
 		// Init VisualEditor platform
 		new ve.init.mw.Platform().initialize()
 			.fail( function () {

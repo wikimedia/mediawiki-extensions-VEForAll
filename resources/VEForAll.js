@@ -40,12 +40,6 @@
 	 * @return {boolean}
 	 */
 	jQuery.fn.applyVisualEditor = function () {
-
-		var config = mw.config.get( 'VEForAll' );
-		if ( !config.VisualEditorEnable ) {
-			return false;
-		}
-
 		return this.each( function () {
 			var veEditor = new mw.veForAll.Editor( this, $( this ).val() );
 			veInstances.push( veEditor );

@@ -1,6 +1,7 @@
 VEForAll extension
 
 Version 0.5.2
+
 Pierre Boutet, Clément Flipo, Ike Hecht, Yaron Koren, Cindy Cicalese
 
 VEForAll ("VisualEditor For All") is a MediaWiki extension that provides
@@ -11,10 +12,6 @@ textarea input.
 
 As you might expect, the VisualEditor extension must be installed for VEForAll
 to work.
-
-This extension includes the file ApiParsoidUtils.php, whose contents are
-mostly copied from the files ApiParsoidUtils.php and Utils.php in the
-StructuredDiscussions extension. See that extension for attribution.
 
 For more information, see the extension homepage at:
 https://www.mediawiki.org/wiki/Extension:VEForAll

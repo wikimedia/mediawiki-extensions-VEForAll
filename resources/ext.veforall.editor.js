@@ -2,6 +2,7 @@
  * VEForAll Editor class.
  *
  * @author Pierre Boutet
+ * @author Yaron Koren
  */
 
 ( function ( $, mw, OO, ve ) {

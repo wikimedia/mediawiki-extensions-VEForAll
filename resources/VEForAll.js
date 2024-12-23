@@ -1,5 +1,5 @@
 /*
- * VEForAll initialization
+ * VEForAll initialization and validation
  *
  * @author Pierre Boutet
  * @author Clement Flipo
@@ -9,13 +9,6 @@
 /* globals jQuery, mw, ve */
 
 ( function ( $, mw ) {
-
-	/**
-	 * What this file does:
-	 * - Loads VisualEditor library
-	 * - Watch click on save buttons, to defer the save request after all visualEditor
-	 *   requests are done.
-	 */
 
 	var veInstances = [];
 
@@ -55,8 +48,9 @@
 	};
 
 	if ( mw.hook( 'pf.formSetupAfter' ) ) {
-		// This hook was added in Page Forms 4.7 - it helps to ensure that the VEForAll
-		// init code does not get called too soon.
+		// If this is being called from within the Page Forms extension,
+		// make sure that the init code is called after the form has
+		// already been created.
 		mw.hook( 'pf.formSetupAfter' ).add( function () {
 			initVisualEditor();
 		} );
@@ -64,7 +58,6 @@
 		initVisualEditor();
 	}
 
-	// This hook was added in Page Forms 5.0.
 	mw.hook( 'pf.formValidation' ).add( function ( args ) {
 		var hasMinimizedPlainVETextarea = false;
 		$( '.minimized' ).each( function () {

@@ -55,8 +55,7 @@
 	min-height: 9em;
 }
 
-#pfForm .ve4all--disabled,
-#sfForm .ve4all--disabled {
+#pfForm .ve4all--disabled {
 	pointer-events: none;
 	color: gray;
 }

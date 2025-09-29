@@ -28,6 +28,7 @@ class VEForAllHooks {
 	private static $defaultConfig = [
 		'normal' => [
 			[
+				'name' => 'paragraph-format',
 				'header' => 'visualeditor-toolbar-paragraph-format',
 				'title' => 'visualeditor-toolbar-format-tooltip',
 				'type' => 'menu',
@@ -43,6 +44,7 @@ class VEForAllHooks {
 				]
 			],
 			[
+				'name' => 'text-style',
 				'header' => 'visualeditor-toolbar-text-style',
 				'title' => 'visualeditor-toolbar-style-tooltip',
 				'include' => [
@@ -52,11 +54,13 @@ class VEForAllHooks {
 				]
 			],
 			[
+				'name' => 'links',
 				'include' => [
 					'link'
 				]
 			],
 			[
+				'name' => 'structure',
 				'header' => 'visualeditor-toolbar-structure',
 				'title' => 'visualeditor-toolbar-structure',
 				'type' => 'list',
@@ -70,6 +74,7 @@ class VEForAllHooks {
 				]
 			],
 			[
+				'name' => 'insert',
 				'header' => 'visualeditor-toolbar-insert',
 				'title' => 'visualeditor-toolbar-insert',
 				'type' => 'list',
@@ -89,6 +94,7 @@ class VEForAllHooks {
 		],
 		'wide' => [
 			[
+				'name' => 'paragraph-format',
 				'header' => 'visualeditor-toolbar-paragraph-format',
 				'title' => 'visualeditor-toolbar-format-tooltip',
 				'type' => 'menu',
@@ -104,6 +110,7 @@ class VEForAllHooks {
 				]
 			],
 			[
+				'name' => 'text-style',
 				'header' => 'visualeditor-toolbar-text-style',
 				'title' => 'visualeditor-toolbar-style-tooltip',
 				'include' => [
@@ -113,11 +120,13 @@ class VEForAllHooks {
 				]
 			],
 			[
+				'name' => 'links',
 				'include' => [
 					'link'
 				]
 			],
 			[
+				'name' => 'structure',
 				'header' => 'visualeditor-toolbar-structure',
 				'title' => 'visualeditor-toolbar-structure',
 				'type' => 'list',
@@ -131,6 +140,7 @@ class VEForAllHooks {
 				]
 			],
 			[
+				'name' => 'insert',
 				'header' => 'visualeditor-toolbar-insert',
 				'title' => 'visualeditor-toolbar-insert',
 				'type' => 'list',

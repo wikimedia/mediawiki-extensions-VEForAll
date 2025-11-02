@@ -8,10 +8,10 @@ use MediaWiki\Extension\VisualEditor\VisualEditorParsoidClient;
 use MediaWiki\Extension\VisualEditor\VisualEditorParsoidClientFactory;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use ParserOptions;
 use ParsoidVirtualRESTService;
 use RequestContext;
-use Title;
 
 /**
  * Heavily based on the ApiParsoidUtils and Utils classes from the

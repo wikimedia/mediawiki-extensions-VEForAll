@@ -1,0 +1,7 @@
+[
+	{
+		"resourceModule": "ext.veforall.core.desktop",
+		"ignoreDependencies": true,
+		"maxSize": null
+	}
+]

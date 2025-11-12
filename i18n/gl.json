@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Toliño"
+		]
+	},
+	"veforall-desc": "Unha biblioteca para que as extensións integren o editor visual",
+	"veforall-switch-editor-tool-title": "Cambiar ao editor de texto wiki",
+	"apihelp-veforall-parsoid-utils-summary": "Converter o texto de texto wiki a HTML e viceversa",
+	"apihelp-veforall-parsoid-utils-param-from": "«html» ou «wikitext»",
+	"apihelp-veforall-parsoid-utils-param-to": "«html» ou «wikitext»",
+	"apihelp-veforall-parsoid-utils-param-content": "contido a converter",
+	"apihelp-veforall-parsoid-utils-param-title": "título da páxina que alberga o contido",
+	"apihelp-veforall-parsoid-utils-param-pageid": "identificador da páxina que alberga o contido",
+	"apihelp-veforall-parsoid-utils-example-1": "converter «blah» de texto wiki a HTML",
+	"veforall-api-error-unsupported-conversion": "Non se admite a conversión de «$1» a «$2».",
+	"veforall-api-error-unsupported-parser-conversion": "O analizador principal non admite a conversión de «$1» a «$2».",
+	"veforall-api-error-parsoid-error": "Fallou a solicitude feita a $1 para a conversión de contido de «$2» a «$3» conectado ao título «$4»: $5",
+	"veforall-form-instances-not-minimized": "Debido a limitacións do software, houbo que despregar algunhas caixas encartadas antes de que se puidese enviar o formulario. Volve enviar o formulario agora."
+}

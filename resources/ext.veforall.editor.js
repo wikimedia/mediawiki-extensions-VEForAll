@@ -26,7 +26,7 @@
 	 * @param {string} [content='']
 	 */
 	mw.veForAll.Editor = function ( $node, content ) {
-		var modules;
+		let modules;
 
 		// mixin constructor
 		OO.EventEmitter.call( this );
@@ -56,7 +56,7 @@
 	mw.veForAll.Editor.prototype.initCallbacks = [];
 
 	mw.veForAll.Editor.prototype.createTarget = function () {
-		var self = this, $wrapperNode, maxHeight;
+		let self = this, $wrapperNode, maxHeight;
 
 		if ( $( this.$node ).hasClass( 'toolbarOnTop' ) ) {
 			this.target = new mw.veForAll.Targetwide( this.$node, $( this.$node ).val() );
@@ -68,13 +68,13 @@
 		self.target.on( 'editor-ready', function () {
 			// Catch keyup events on surface to comply with
 			// saveAndContinue button state and changes warning.
-			self.target.getSurface().getView().on( 'keyup', function () {
+			self.target.getSurface().getView().on( 'keyup', () => {
 				self.$node.trigger( 'change' );
 			} );
 
 			// Catch keyup events on raw textarea to use changes
 			// warning on page reload.
-			self.target.$node.on( 'keyup', function () {
+			self.target.$node.on( 'keyup', () => {
 				self.$node.trigger( 'change' );
 			} );
 
@@ -100,9 +100,9 @@
 	mw.veForAll.Editor.prototype.init = function ( content ) {
 		this.target = this.createTarget();
 
-		$.each( this.initCallbacks, function ( k, callback ) {
+		$.each( this.initCallbacks, ( k, callback ) => {
 			callback.apply( this );
-		}.bind( this ) );
+		} );
 	};
 
 	mw.veForAll.Editor.prototype.destroy = function () {
@@ -120,7 +120,7 @@
 	 * @return {string}
 	 */
 	mw.veForAll.Editor.prototype.getRawContent = function () {
-		var doc, html;
+		let doc, html;
 
 		// If we haven't fully loaded yet, just return nothing.
 		if ( !this.target ) {
@@ -161,7 +161,7 @@
 	};
 
 	mw.veForAll.Editor.prototype.moveCursorToEnd = function () {
-		var data, cursorPos;
+		let data, cursorPos;
 
 		if ( !this.target ) {
 			this.initCallbacks.push( function () {
@@ -195,13 +195,13 @@
 	// Static methods
 
 	mw.veForAll.Editor.static.isSupported = function () {
-		var isMobileTarget = ( mw.config.get( 'skin' ) === 'minerva' );
+		const isMobileTarget = ( mw.config.get( 'skin' ) === 'minerva' );
 
 		/* global VisualEditorSupportCheck */
 		return !!(
 			!isMobileTarget &&
 			mw.loader.getState( 'ext.visualEditor.core' ) &&
-			mw.config.get( 'wgFlowEditorList' ).indexOf( 'visualeditor' ) !== -1 &&
+			mw.config.get( 'wgFlowEditorList' ).includes( 'visualeditor' ) &&
 			window.VisualEditorSupportCheck && VisualEditorSupportCheck
 		);
 	};

@@ -10,15 +10,15 @@
 
 ( function ( $, mw ) {
 
-	var veInstances = [];
+	const veInstances = [];
 
 	function initVisualEditor() {
 		// Init VisualEditor platform
 		new ve.init.mw.Platform().initialize()
-			.fail( function () {
+			.fail( () => {
 				// $( editor ).text( 'Sorry, this browser is not supported.' );
 			} )
-			.done( function () {
+			.done( () => {
 				// Add i18n messages to VE
 				ve.init.platform.addMessages( mw.messages.get() );
 			} );
@@ -35,7 +35,7 @@
 	 */
 	jQuery.fn.applyVisualEditor = function () {
 		return this.each( function () {
-			var veEditor = new mw.veForAll.Editor( this, $( this ).val() );
+			const veEditor = new mw.veForAll.Editor( this, $( this ).val() );
 			veInstances.push( veEditor );
 		} );
 	};
@@ -51,17 +51,17 @@
 		// If this is being called from within the Page Forms extension,
 		// make sure that the init code is called after the form has
 		// already been created.
-		mw.hook( 'pf.formSetupAfter' ).add( function () {
+		mw.hook( 'pf.formSetupAfter' ).add( () => {
 			initVisualEditor();
 		} );
 	} else {
 		initVisualEditor();
 	}
 
-	mw.hook( 'pf.formValidation' ).add( function ( args ) {
-		var hasMinimizedPlainVETextarea = false;
+	mw.hook( 'pf.formValidation' ).add( ( args ) => {
+		let hasMinimizedPlainVETextarea = false;
 		$( '.minimized' ).each( function () {
-			var instanceDiv = $( this );
+			const instanceDiv = $( this );
 			instanceDiv.find( 'textarea.vePartOfTemplate' ).each( function () {
 				if ( $( this ).css( 'display' ) !== 'none' ) {
 					instanceDiv.removeClass( 'minimized' );

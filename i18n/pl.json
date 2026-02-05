@@ -4,15 +4,21 @@
 			"Chrumps",
 			"DeRudySoulStorm",
 			"Rail",
-			"Railfail536"
+			"Railfail536",
+			"Woytecr"
 		]
 	},
+	"veforall-desc": "Biblioteka dla rozszerzeń do dodawania Edytora Wizualnego",
 	"veforall-switch-editor-tool-title": "Przełącz do edytora wikitekstu",
+	"apihelp-veforall-parsoid-utils-summary": "Konwertuj tekst z Wikikodu do HTML i na odwrót",
 	"apihelp-veforall-parsoid-utils-param-from": "'html' lub 'wikitekst'",
 	"apihelp-veforall-parsoid-utils-param-to": "'html' lub 'wikitekst'",
 	"apihelp-veforall-parsoid-utils-param-content": "treść do skonwertowania",
 	"apihelp-veforall-parsoid-utils-param-title": "tytuł strony zawierającej treść",
+	"apihelp-veforall-parsoid-utils-param-pageid": "ID strony strony zawierającej treść",
+	"apihelp-veforall-parsoid-utils-example-1": "konwertuj ''blah'' z wikikodu do html",
 	"veforall-api-error-unsupported-conversion": "Konwersja z '$1' na '$2'  nie jest obsługiwana.",
 	"veforall-api-error-unsupported-parser-conversion": "Konwersja z '$1' na '$2' nie jest obsługiwana przez źródło parsera.",
-	"veforall-api-error-parsoid-error": "Żądanie $1 za $2 do $3 konwersja treści związanej z tytułem $4 nie powiodło się: $5"
+	"veforall-api-error-parsoid-error": "Żądanie $1 za $2 do $3 konwersja treści związanej z tytułem $4 nie powiodło się: $5",
+	"veforall-form-instances-not-minimized": "Ze względu na ograniczenia oprogramowania, niektóre zwinięte obszary musiały zostać rozwinięte przed wysłaniem formularza. Prosimy o ponowne przesłanie formularza."
 }

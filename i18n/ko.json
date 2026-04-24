@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Tensama0415",
 			"Ykhwong"
 		]
 	},
@@ -14,5 +15,7 @@
 	"apihelp-veforall-parsoid-utils-param-pageid": "내용을 보유하고 있는 문서의 문서 ID",
 	"apihelp-veforall-parsoid-utils-example-1": "\"blah\"를 위키텍스트에서 html로 변환",
 	"veforall-api-error-unsupported-conversion": "'$1'에서 '$2'(으)로 변환하는 것은 지원되지 않습니다.",
-	"veforall-api-error-unsupported-parser-conversion": "'$1'에서 '$2'(으)로 변환하는 것은 코어 파서에 의해 지원되지 않습니다."
+	"veforall-api-error-unsupported-parser-conversion": "'$1'에서 '$2'(으)로 변환하는 것은 코어 파서에 의해 지원되지 않습니다.",
+	"veforall-api-error-parsoid-error": "$4 제목과 관련된 $2 콘텐츠를 $3 콘텐츠로 변환하기 위한 $1 요청이 실패했습니다: $5",
+	"veforall-form-instances-not-minimized": "소프트웨어상의 제약으로 인해 일부 접힌 입력란을 펼쳐야만 양식을 제출할 수 있습니다. 지금 다시 제출해 주세요."
 }

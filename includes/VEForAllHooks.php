@@ -3,26 +3,11 @@
 namespace VEForAll;
 
 use ExtensionRegistry;
-use FatalError;
 use MediaWiki\MediaWikiServices;
-use MWException;
 use OutputPage;
 use Skin;
 
 class VEForAllHooks {
-
-	public static function registerClasses() {
-		global $wgAutoloadClasses, $wgAPIModules;
-		if ( class_exists( 'MediaWiki\Parser\Parsoid\ParsoidParserFactory' ) ) {
-			// MW 1.41+
-			$wgAutoloadClasses['VEForAll\\ApiParsoidUtils'] = __DIR__ . '/ApiParsoidUtils.php';
-			$wgAPIModules['veforall-parsoid-utils'] = 'VEForAll\\ApiParsoidUtils';
-		} else {
-			// MW 1.39-1.40
-			$wgAutoloadClasses['VEForAll\\ApiParsoidUtilsOld'] = __DIR__ . '/ApiParsoidUtilsOld.php';
-			$wgAPIModules['veforall-parsoid-utils'] = 'VEForAll\\ApiParsoidUtilsOld';
-		}
-	}
 
 	/** @var array[] */
 	private static $defaultConfig = [

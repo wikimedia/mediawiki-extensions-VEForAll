@@ -55,6 +55,18 @@
 	min-height: 9em;
 }
 
+/**
+ * Some elements, like section headers, get a strange message box next to them
+ * saying "Sorry, this element can only be edited in source mode for now" -
+ * even though they can be edited. (This seems to happen for at least MW 1.43+.)
+ * In lieu of actually fixing the problem, we simply hide the display of this
+ * message box.
+ */
+.ve-ce-focusableNode-invisible {
+	display: none !important;
+}
+
+
 #pfForm .ve4all--disabled {
 	pointer-events: none;
 	color: gray;

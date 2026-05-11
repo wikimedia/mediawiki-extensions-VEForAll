@@ -306,7 +306,7 @@
 			// editor in those parts. So, just get rid of this tag.
 			// @todo - it would be better, of course, to figure out
 			// the underlying cause of this problem, and fix that.
-			const regex = /<span [^>]* typeof="mw:FallbackId" [^>]*><\/span>/g;
+			const regex = /<span [^>]*typeof="mw:FallbackId" [^>]*><\/span>/g;
 			htmlContent = htmlContent.replace( regex, '' );
 			target.createWithHtmlContent( htmlContent );
 			$( target.$node )

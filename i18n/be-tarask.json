@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Red Winged Duck"
+			"Red Winged Duck",
+			"Ucukor"
 		]
 	},
 	"veforall-desc": "Бібліятэка для пашырэньняў, каб дадаваць візуальны рэдактар",
@@ -15,5 +16,5 @@
 	"apihelp-veforall-parsoid-utils-example-1": "ператварыць ''blah'' зь вікітэксту ў html",
 	"veforall-api-error-unsupported-conversion": "Канвэртацыя з «$1» у «$2» не падтрымліваецца.",
 	"veforall-api-error-unsupported-parser-conversion": "Канвэртацыя з «$1» у «$2» не падтрымліваецца парсэрам ядра.",
-	"veforall-api-error-parsoid-error": "Запыт $1 для канвэртацыі зьместу $2 у $3, зьвязанага з назвай $4, не атрымаўся: $5"
+	"veforall-api-error-parsoid-error": "Запыт $1 для канвэртацыі зьместу $2 у $3, зьвязанага з назвай $4, ня ўдаўся: $5"
 }

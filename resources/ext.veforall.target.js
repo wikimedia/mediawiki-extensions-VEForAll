@@ -65,7 +65,7 @@
 	}() );
 
 	mw.veForAll.Target.static.actionGroups = [
-		{ include: [ 've4aSwitchEditor' ] }
+		{ name: 've4aSwitch', include: [ 've4aSwitchEditor' ] }
 	];
 
 	// Allow pasting links

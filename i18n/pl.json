@@ -3,16 +3,17 @@
 		"authors": [
 			"Chrumps",
 			"DeRudySoulStorm",
+			"PanWor",
 			"Rail",
 			"Railfail536",
 			"Woytecr"
 		]
 	},
 	"veforall-desc": "Biblioteka dla rozszerzeń do dodawania Edytora Wizualnego",
-	"veforall-switch-editor-tool-title": "Przełącz do edytora wikitekstu",
+	"veforall-switch-editor-tool-title": "Przełącz do edytora wikikodu",
 	"apihelp-veforall-parsoid-utils-summary": "Konwertuj tekst z Wikikodu do HTML i na odwrót",
-	"apihelp-veforall-parsoid-utils-param-from": "'html' lub 'wikitekst'",
-	"apihelp-veforall-parsoid-utils-param-to": "'html' lub 'wikitekst'",
+	"apihelp-veforall-parsoid-utils-param-from": "'html' lub 'wikikod'",
+	"apihelp-veforall-parsoid-utils-param-to": "'html' lub 'wikikod'",
 	"apihelp-veforall-parsoid-utils-param-content": "treść do skonwertowania",
 	"apihelp-veforall-parsoid-utils-param-title": "tytuł strony zawierającej treść",
 	"apihelp-veforall-parsoid-utils-param-pageid": "ID strony strony zawierającej treść",

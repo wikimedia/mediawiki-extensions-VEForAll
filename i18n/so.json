@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"veforall-desc": "Maktabad ay kordhintu ugu dari karto VisualEditor",
+	"veforall-switch-editor-tool-title": "U beddel tifaftiraha Wikitext-ka",
+	"apihelp-veforall-parsoid-utils-summary": "Qoraalka u beddel Wikitext una beddel HTML, iyo lidkeeda",
+	"apihelp-veforall-parsoid-utils-param-from": "'html' ama 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-to": "'html' ama 'wikitext'",
+	"apihelp-veforall-parsoid-utils-param-content": "Nuxurka la beddelayo",
+	"apihelp-veforall-parsoid-utils-param-title": "Cinwaanka bogga haya nuxurka",
+	"apihelp-veforall-parsoid-utils-param-pageid": "Aqoonsiga bogga haya nuxurka",
+	"apihelp-veforall-parsoid-utils-example-1": "Ka beddel ''blah'' Wikitext una beddel HTML",
+	"veforall-api-error-unsupported-conversion": "Beddelidda '$1' ilaa '$2' lama taageerayo.",
+	"veforall-api-error-unsupported-parser-conversion": "Beddelidda '$1' ilaa '$2' ma taageerto farsameeyaha aasaasiga ah.",
+	"veforall-api-error-parsoid-error": "Codsigii $1 ee beddelidda nuxurka ku xiran cinwaanka $4, laga bilaabo $2 loona beddelayo $3, wuu fashilmay: $5",
+	"veforall-form-instances-not-minimized": "Sababo la xiriira xaddidaadaha ku jira software-ka, sanduuqyada qaarkood ee la isku laabay waa in la ballaariyaa ka hor inta aan foomkan la gudbin. Fadlan hadda mar kale gudbi foomka."
+}

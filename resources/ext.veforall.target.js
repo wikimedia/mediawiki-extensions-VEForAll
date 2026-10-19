@@ -129,11 +129,14 @@
 		const target = this,
 			$focusedElement = $( ':focus' );
 
-		this.addSurface(
-			ve.dm.converter.getModelFromDom(
-				ve.createDocumentFromHtml( content )
-			)
-		);
+		const doc = ve.createDocumentFromHtml( content );
+		// Parsoid adds an empty legacy-ID span to headings whose ID differs
+		// in the legacy encoding (e.g. "?", "!", commas or accents). VE strips
+		// these in ve.init.mw.Target#parseDocument, which this target bypasses;
+		// left in, they show up as "Sorry, this element can only be edited in
+		// source mode for now".
+		mw.libs.ve.stripParsoidFallbackIds( doc.body );
+		this.addSurface( ve.dm.converter.getModelFromDom( doc ) );
 		// this.setSurface( surface );
 		// this.$element.insertAfter( this.$node );
 
@@ -297,18 +300,7 @@
 			content: content,
 			title: this.getPageName()
 		} ).then( ( data ) => {
-			let htmlContent = data[ 'veforall-parsoid-utils' ].content;
-			// For some reason, certain wikitext (like section names
-			// containing commas) sometimes leads to this strange
-			// <span> tag within the returned HTML, which in turn
-			// leads to the message "Sorry, this element can only be
-			// edited in source mode for now" showing up in the
-			// editor in those parts. So, just get rid of this tag.
-			// @todo - it would be better, of course, to figure out
-			// the underlying cause of this problem, and fix that.
-			const regex = /<span [^>]* typeof="mw:FallbackId" [^>]*><\/span>/g;
-			htmlContent = htmlContent.replace( regex, '' );
-			target.createWithHtmlContent( htmlContent );
+			target.createWithHtmlContent( data[ 'veforall-parsoid-utils' ].content );
 			$( target.$node )
 				.prop( 'disabled', false )
 				.removeClass( 'oo-ui-texture-pending' );

@@ -18,7 +18,6 @@
 	mw.veForAll.Target = function ( node, content ) {
 		const config = {};
 		config.toolbarConfig = {};
-		config.toolbarConfig.actions = true;
 		// disable floatable behavior.
 		config.toolbarConfig.floatable = false;
 
@@ -64,9 +63,9 @@
 		} );
 	}() );
 
-	mw.veForAll.Target.static.actionGroups = [
-		{ name: 've4aSwitch', include: [ 've4aSwitchEditor' ] }
-	];
+	mw.veForAll.Target.static.toolbarGroups = mw.veForAll.Target.static.toolbarGroups.concat( [
+		{ name: 've4aSwitch', align: 'after', include: [ 've4aSwitchEditor' ] }
+	] );
 
 	// Allow pasting links
 	mw.veForAll.Target.static.importRules = ve.copy( mw.veForAll.Target.static.importRules );
@@ -80,15 +79,20 @@
 		// FIXME this isn't supposed to be a global state thing, it's supposed to be
 		// variable per EditorWidget instance
 
+		// Remove any existing switch-related groups from toolbarGroups
+		mw.veForAll.Target.static.toolbarGroups = mw.veForAll.Target.static.toolbarGroups.filter(
+			( group ) => group.name !== 've4aSwitch'
+		);
+
 		if ( switchable ) {
-			mw.veForAll.Target.static.actionGroups = [ {
+			mw.veForAll.Target.static.toolbarGroups = mw.veForAll.Target.static.toolbarGroups.concat( [ {
+				name: 've4aSwitch',
 				type: 'list',
+				align: 'after',
 				icon: 'edit',
 				title: mw.msg( 'visualeditor-mweditmode-tooltip' ),
 				include: [ 'editModeVisual', 'editModeSource' ]
-			} ];
-		} else {
-			mw.veForAll.Target.static.actionGroups = [];
+			} ] );
 		}
 	};
 
@@ -365,7 +369,6 @@
 			$( this.$node ).after( toolbar.$element );
 		}
 		toolbar.initialize();
-		this.getActions().initialize();
 	};
 
 	// Registration
